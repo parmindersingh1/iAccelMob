@@ -5,9 +5,9 @@
     .module('app.user')
     .controller('EditProfileController', EditProfileController);
 
-  EditProfileController.$inject = ['$q', 'userProfileFactory', '$state', '$http', 'validationHelperFactory','$stateParams', '$localStorage', 'toast', '$cordovaCamera', '$ionicLoading' ];
+  EditProfileController.$inject = ['$q', 'userProfileFactory', '$state', '$http', 'validationHelperFactory','$stateParams', '$localStorage', '$cordovaCamera', '$ionicLoading' ];
 
-  function EditProfileController($q, userProfileFactory, $state, $http, validationHelperFactory, $stateParams, $localStorage, toast, $cordovaCamera, $ionicLoading) {
+  function EditProfileController($q, userProfileFactory, $state, $http, validationHelperFactory, $stateParams, $localStorage, $cordovaCamera, $ionicLoading) {
     var vm = this;
 
     vm.imgURI = "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg";

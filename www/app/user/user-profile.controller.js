@@ -5,9 +5,9 @@
     .module('app.user')
     .controller('userProfileController', UserProfileController);
 
-  UserProfileController.$inject = ['toast', '$localStorage', '__env' ,'userProfileFactory' ,'$state' ];
+  UserProfileController.$inject = ['$localStorage', '__env' ,'userProfileFactory' ,'$state' ];
 
-  function UserProfileController(toast, $localStorage, __env ,userProfileFactory ,$state) {
+  function UserProfileController( $localStorage, __env ,userProfileFactory ,$state) {
     var vm = this;
 
     var userID = $localStorage._identity.userDetails.id;
@@ -19,7 +19,7 @@
           if (response.status == 200) {
             vm.master = response.data;
             console.log(response.data);
-            vm.user = angular.copy(vm.master);            
+            vm.user = angular.copy(vm.master);
           }
           else if (response.status == 404) {
             console.error('User not found', 'error');

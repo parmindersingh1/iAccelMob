@@ -5,9 +5,9 @@
     .module('app.user')
     .controller('ChangePasswordController', ChangePasswordController);
 
-  ChangePasswordController.$inject = ['$q', 'changePasswordFactory', '$state', 'validationHelperFactory', '$location', '$stateParams', '$localStorage', 'toast'];
+  ChangePasswordController.$inject = ['$q', 'changePasswordFactory', '$state', 'validationHelperFactory', '$location', '$stateParams', '$localStorage'];
 
-  function ChangePasswordController($q, changePasswordFactory, $state, validationHelperFactory, $location, $stateParams, $localStorage, toast) {
+  function ChangePasswordController($q, changePasswordFactory, $state, validationHelperFactory, $location, $stateParams, $localStorage) {
     var vm = this;
 
     vm.passData = {};
