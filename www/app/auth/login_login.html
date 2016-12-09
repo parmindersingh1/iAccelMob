@@ -1,0 +1,52 @@
+<ion-view class ="login-view auth-view" cache-view="false">
+   <ion-content scroll="false">
+
+      <div class="row">
+         <div class="col col-center">
+            <div class="card login-container" >
+               <form name="login_form"
+                  class="" ng-submit="vm.signin(login_form)"
+                  novalidate ng-cloak>
+                  <!-- <my-tabs>
+                     <my-tab title="Email"> -->
+                        <div class="list">
+                           <label class="item item-input" ng-class="{ 'has-errors' : login_form.user_email.$dirty && login_form.user_email.$invalid, 'no-errors' : login_form.user_email.$dirty && login_form.user_email.$valid}">
+                             <input type="email"  placeholder="Email"   name="user_email"   ng-model="vm.user"  minlength="5" required>
+                           </label>
+
+                           <div class="error-container" ng-show="login_form.user_email.$dirty && login_form.user_email.$error"
+                            ng-messages="login_form.user_email.$error" ng-messages-include="/app/layouts/error-messages.html">
+                          </div>
+
+                            <label class="item item-input" ng-class="{'has-errors' : login_form.user_password.$dirty && login_form.user_password.$invalid, 'no-errors' : login_form.user_password.$dirty && login_form.user_password.$valid }" show-hide-container>
+                              <input type="password"  placeholder="Password"  name="user_password"  ng-model="vm.password" ng-minlength="5" ng-maxlength="20" required show-hide-input>
+                            </label>
+
+                            <div class="error-container last-error-container" ng-show="login_form.user_password.$dirty && login_form.user_password.$error"
+                              ng-messages="login_form.user_password.$error" ng-messages-include="/app/layouts/error-messages.html">
+                            </div>
+                        </div>
+                      <!-- </my-tab>
+                  </my-tabs> -->
+                  <div class="item item-body bottom-content">
+                     <button type="submit" ng-disabled="login_form.$invalid"
+                        class="button button-positive button-block">
+                     Log In </button>
+                  </div>
+               </form>
+            </div>
+            <div class="alternative-actions text-center">
+               <a class="forgot-password button button-small button-clear button-light"
+                  ui-sref="auth.forgot">
+               Forgot Password? </a>
+               <!-- <a class="sign-up button button-small button-clear button-light"
+                  ui-sref="auth.signup">
+               Sign Up </a> -->
+            </div>
+            <div class="copyright stable text-center">
+                {{app.year}} &copy; {{ app.name }} by {{ app.author }}.
+            </div>
+         </div>
+      </div>
+   </ion-content>
+</ion-view>

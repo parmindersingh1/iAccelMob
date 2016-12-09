@@ -1,0 +1,213 @@
+<ion-view class="feeds-categories-view">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    <span>{{vm.title}}</span>
+  </ion-nav-title>
+  <ion-content>
+
+<!-- <div class="list layouts-functionalities">
+  <div class="card item item-icon-right">
+    <div class="padding">
+      <h2 class="title text-bold">
+          MAINS CONSUMPTION </h2>
+
+      <div class="padding-top">
+        <h2 class="text-data text-green margin-bottom-5">24 Kw</h2>
+        <span class="text-light text-bold margin-right-10">+1.3Kw</span><span class="text-small">+0.05%</span>
+      </div>
+    </div>
+    <i class="icon ion-arrow-swap"></i>
+  </div>
+
+ <div class="card item item-icon-right">
+    <div class="padding">
+      <h2 class="title text-bold">
+          GENSET CONSUMPTION </h2>
+
+      <div class="padding-top">
+        <h2 class="text-data text-info margin-bottom-5">8 Kw</h2>
+        <span class="text-light text-bold margin-right-10">-0.3wK</span><span class="text-small">-0.05%</span>
+      </div>
+    </div>
+    <i class="icon ion-arrow-swap"></i>
+  </div> -->
+
+  <div ng-controller="ConsumptionCtrl as mains">
+
+        <dt-bar-graph-widget activate="mains.activate()" data="mains.data" color="green"></dt-bar-graph-widget>
+
+        <dt-bar-graph-widget activate="mains.activateGenset()" data="mains.dataGenset" color="info"></dt-bar-graph-widget>
+
+  </div>
+
+
+  <div ng-controller="ActiveHourCtrl as activehours">
+
+        <dt-active-hour-widget activate="activehours.activate()" data="activehours.data"></dt-active-hour-widget>
+
+  </div>
+
+    <div ng-controller="TemperatureCtrl as temperature">
+
+      <dt-line-graph-widget activate="temperature.activate()" data="temperature.data"></dt-line-graph-widget>
+
+    </div>
+
+
+
+   <div ng-controller="MainSupplyCtrl as mainSupply">
+
+       <dt-mains-reading-widget activate="mainSupply.activate()" data="mainSupply.data"></dt-mains-reading-widget>
+
+     </div>
+
+
+   <!-- <div class="card item">
+     <div class="padding-vertical">
+       <h2 class="title text-bold padding">
+           AC Status </h2><hr>
+           <div class = "row padding-vertical-10">
+              <div class = "col align-middle text-center">Asset</div>
+              <div class = "col align-middle text-center text-bold">Status</div>
+              <div class = "col align-middle text-center text-bold">Energy Consumption</div>
+           </div>
+
+           <div class = "row padding-vertical-10">
+              <div class = "col align-middle text-center">
+                <span class="text-small block text-light">Signage</span>
+                <a href="#">  Main Display </a></div>
+              <div class = "col align-middle">
+                <span class="text-center">
+                  <span class="label partition-orange text-small">Off</span>
+                </span>
+              </div>
+              <div class = "col align-middle text-center">Not Applicable</div>
+            </div>
+
+            <div class = "row padding-vertical-10">
+               <div class = "col align-middle text-center">
+                 <span class="text-small block text-light">Main AC 1</span>
+                 <a href="#"> 8.5 Ton </a>
+               </div>
+               <div class = "col align-middle">
+                 <span class="text-center">
+                  <span class="label partition-green text-small">On</span>
+                </span>
+               </div>
+               <div class = "col align-middle text-center">4 Kw</div>
+           </div>
+
+           <div class = "row padding-vertical-10">
+                <div class = "col align-middle text-center">
+                  <span class="text-small block text-light">Main AC 2</span>
+                      <a href="#"> 5.5 Ton </a>
+                </div>
+                <div class = "col align-middle">
+                  <span class="text-center">
+                   <span class="label partition-green text-small">On</span>
+                 </span>
+                </div>
+                <div class = "col align-middle text-center">4 Kw</div>
+           </div>
+
+           <div class = "row padding-vertical-10">
+                <div class = "col align-middle text-center">
+                  <span class="text-small block text-light">Split AC 1</span>
+                  <a href="#">2 Ton </a>
+                </div>
+                <div class = "col align-middle">
+                  <span class="text-center">
+                    <span class="label partition-orange text-small">Off</span>
+                  </span>
+                </div>
+                <div class = "col align-middle text-center">4 Kw</div>
+           </div>
+
+           <div class = "row padding-vertical-10">
+                <div class = "col align-middle text-center">
+                  <span class="text-small block text-light">Split AC 2</span>
+                  <a href="#">2 Ton </a>
+                </div>
+                <div class = "col align-middle">
+                    <span class="text-center">
+                      <span class="label partition-orange text-small">Off</span>
+                    </span>
+                </div>
+                <div class = "col align-middle text-center">4 Kw</div>
+           </div>
+
+
+
+      </div>
+    </div> -->
+
+
+    <div ng-controller="AssetStatusCtrl as assetStatus">
+
+        <dt-asset-status-widget activate="assetStatus.activate()" data="assetStatus.data"></dt-asset-status-widget>
+
+      </div>
+
+
+
+
+</div>
+
+
+
+
+
+          <!-- <div class="row">
+
+            <dt-box-header boxdata="vm.boxData" class="list"></dt-box-header>
+
+          </div>
+
+
+          <div class="row">
+
+            <dt-bar-graph bargraphdata="vm.BarGraphData"></dt-bar-graph>
+
+          </div>
+
+          <div class="row">
+            <dt-wave-graph wavegraphdata="vm.WaveGraphData"></dt-wave-graph>
+
+          </div>
+
+          <div class="row">
+
+            <dt-expenses-graph expensesgraphdata="vm.ExpensesGraphData"></dt-expenses-graph>
+          </div>
+          <div class="row">
+            <dt-real-time-knob knobdata="vm.KnobData"></dt-real-time-knob>
+
+          </div>
+
+          <div class="row">
+
+
+              <dt-map-markers  markers="vm.markers" center="{{vm.siteLocation}}"></dt-map-markers>
+
+          </div>
+
+       <div class="row card list">
+
+            <div class="col padding-horizontal">
+             <div class="item">
+               <h2 class="text-bold title padding-bottom">
+                 Site <i class="icon ion-arrow-right-c"></i></h2>
+             </div>
+             <div class="padding-vertical">
+               <ng-map center="{{vm.siteLocation}}" zoom="13">
+                 <marker position="{{vm.siteLocation}}" title="Hello World!"></marker>
+               </ng-map>
+             </div>
+           </div>
+        </div>-->
+
+
+
+</ion-content>

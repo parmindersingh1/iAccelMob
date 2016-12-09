@@ -1,0 +1,106 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content class="post-size-14px">
+    <ion-nav-bar class="bar app-top-bar">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="main-menu" expose-aside-when="large">
+    <ion-content ng-class="vm.theme">
+      <ion-list>
+        <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="app.userProfile">
+          <div class="user-image-container">
+            <pre-img ratio="_1_1" helper-class="rounded-image">
+              <img class="user-image" ng-src="{{vm.user.profilePictureUrl}}" spinner-on-load>
+          	</pre-img>
+          </div>
+          <h2 class="greeting">{{vm.user.firstname +' '+ vm.user.lastname}}</h2>
+          <p class="message">{{vm.user.designation}}</p>
+        </ion-item>
+
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.dashboard">
+          <i class="icon ion-bookmark"></i>
+          <h2 class="menu-text">Dashboard</h2>
+        </ion-item>
+
+<!--
+          <ion-item  nav-clear href="#" onclick="return false;" ng-if="vm.isAdminRole == true"
+                    ng-click="vm.toggleGroup(vm.group.admin)"
+                    ng-class="{active: vm.isGroupShown(vm.group.admin)}">
+              <div class="item-icon-left"> <i class="icon ion-radio-waves"></i></div>
+              <h2 class="menu-text menu-group">Admin</h2>
+              <div class="item-icon-right"><i class="icon" ng-class="vm.isGroupShown(vm.group.admin) ? 'ion-chevron-down' : 'ion-chevron-right'"></i></div>
+          </ion-item>
+
+          <ion-item ng-show="vm.isGroupShown(vm.group.admin)">
+              <ion-list>
+                  <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.admin.client" ng-if="vm.currentAccessLevel >= vm.ACCESS_LEVEL.CLIENT_ADMIN && vm.isAdminRole == true"
+                            ng-show="vm.isGroupShown(vm.group.admin)">
+                  <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text">Clients</h2>
+                  </ion-item>
+                  <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.admin.region" ng-if="vm.currentAccessLevel >= vm.ACCESS_LEVEL.REGION_ADMIN && vm.isAdminRole == true"
+                            ng-show="vm.isGroupShown(vm.group.admin)">
+                  <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text">Regions</h2>
+                  </ion-item>
+                  <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.admin.site" ng-if="vm.currentAccessLevel >= vm.ACCESS_LEVEL.SITE_ADMIN && vm.isAdminRole == true"
+                            ng-show="vm.isGroupShown(vm.group.admin)">
+                  <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text">Sites</h2>
+                  </ion-item>
+
+              </ion-list>
+          </ion-item>
+
+
+
+
+
+
+
+          <ion-item  nav-clear href="#" onclick="return false;"
+                    ng-click="vm.toggleGroup(vm.group.user)"
+                    ng-class="{active: vm.isGroupShown(vm.group.user)}">
+              <div class="item-icon-left"> <i class="icon ion-radio-waves"></i></div>
+              <h2 class="menu-text menu-group"> User Management </h2>
+              <div class="item-icon-right"><i class="icon" ng-class="vm.isGroupShown(vm.group.user) ? 'ion-chevron-down' : 'ion-chevron-right'"></i></div>
+          </ion-item>
+
+          <ion-item ng-show="vm.isGroupShown(vm.group.user)">
+              <ion-list>
+                  <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.user.add" ng-if="vm.isAdminRole == true"
+                            ng-show="vm.isGroupShown(vm.group.user)">
+                  <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text"> New User </h2>
+                  </ion-item>
+                  <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.user.list"
+                            ng-show="vm.isGroupShown(vm.group.user)">
+                  <i class="icon ion-radio-waves"></i>
+                    <h2 class="menu-text"> All Users </h2>
+                  </ion-item>
+
+              </ion-list>
+          </ion-item> -->
+
+
+
+
+
+
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="auth.signout">
+          <i class="icon ion-android-exit"></i>
+          <h2 class="menu-text">Logout</h2>
+        </ion-item>
+
+    </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

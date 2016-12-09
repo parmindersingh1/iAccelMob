@@ -1,0 +1,42 @@
+<ion-view class="login-view auth-view" cache-view="false">
+  <ion-content scroll="false">
+    <div class="row">
+      <div class="col col-center">
+        <div class="card login-container">
+          <form name="forgot_password_form" role="form" id="form" novalidate>
+            <!-- <my-tabs>
+               <my-tab title="Forgot Password"> -->
+                  <div class="item item-body">
+                    <label class="item item-input" ng-class="{ 'has-errors' : forgot_password_form.user_email.$dirty && forgot_password_form.user_email.$invalid, 'no-errors' : forgot_password_form.user_email.$dirty && forgot_password_form.user_email.$valid}">
+                      <input type="email" placeholder="Email" name="user_email" ng-model="vm.email" required>
+                    </label>
+                     <div class="error-container" ng-show="forgot_password_form.user_email.$dirty && forgot_password_form.user_email.$error"
+                       ng-messages="forgot_password_form.user_email.$error" ng-messages-include="/app/layouts/error-messages.html">
+                     </div>
+
+                  </div>
+                <!-- </my-tab>
+            </my-tabs> -->
+            <div class="item item-body bottom-content">
+              <button type="submit" class="button button-positive button-block" ng-click="vm.submit()" ng-disabled="forgot_password_form.$invalid">
+                Recover it
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="alternative-actions text-center">
+          <a class="log-in button button-small button-clear button-light" ui-sref="auth.signin">
+            Log In
+          </a>
+          <!-- <a class="sign-up button button-small button-clear button-light" ui-sref="auth.signup">
+            Sign Up
+          </a> -->
+        </div>
+
+        <div class="copyright stable text-center">
+            {{app.year}} &copy; {{ app.name }} by {{ app.author }}.
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,134 @@
+{
+   "id":"dashboard1",
+   "level":"client",
+   "entityId":"client1",
+   "title":"Site Dashboard",
+   "default":true,
+   "rows":[
+      {
+         "rowIndex":0,
+         "columns":[
+            {
+               "columnIndex":0,
+               "widget":{
+                  "name":"boxHeader",
+                  "title":"Total Visits ",
+                  "barColor":"azure",
+                  "textStyle":"text-azure",
+                  "partitionStyle":"partition-red"
+               },
+               "cols":3,
+               "esQuery":{
+
+               },
+               "dataMapping":{
+                  "source":"dest"
+               }
+            },
+            {
+               "columnIndex":1,
+               "widget":{
+                  "name":"boxHeader",
+                  "title":"Bounce rate ",
+                  "barColor":"green",
+                  "textStyle":"text-green",
+                  "partitionStyle":"partition-green"
+               },
+               "cols":3,
+               "esQuery":{
+
+               },
+               "dataMapping":{
+                  "source":"dest"
+               }
+            },
+            {
+               "columnIndex":2,
+               "widget":{
+                  "name":"boxHeader",
+                  "title":"Total Conversions ",
+                  "barColor":"purple",
+                  "textStyle":"text-purple",
+                  "partitionStyle":"partition-red"
+               },
+               "cols":3,
+               "esQuery":{
+
+               },
+               "dataMapping":{
+                  "source":"dest"
+               }
+            },
+            {
+               "columnIndex":3,
+               "widget":{
+                  "name":"boxHeader",
+                  "title":"Conversion Rate ",
+                  "barColor":"orange",
+                  "textStyle":"text-orange",
+                  "partitionStyle":"partition-green"
+               },
+               "cols":3,
+               "esQuery":{
+
+               },
+               "dataMapping":{
+                  "source":"dest"
+               }
+            }
+         ]
+      },
+      {
+         "rowIndex":1,
+         "columns":[
+            {
+               "columnIndex":0,
+               "widget":{
+                  "name":"graph1",
+                  "title":"Conversion Rate "
+               },
+               "cols":6,
+               "esQuery":{
+
+               },
+               "dataMapping":{
+                  "source":"dest"
+               }
+            },
+            {
+               "columnIndex":1,
+               "widget":{
+                  "name":"graph2",
+                  "title":"Conversion Rate "
+               },
+               "cols":6,
+               "esQuery":{
+
+               },
+               "dataMapping":{
+                  "source":"dest"
+               }
+            }
+         ]
+      },
+      {
+         "rowIndex":2,
+         "columns":[
+            {
+               "columnIndex":0,
+               "widget":{
+                  "name":"map",
+                  "title":"Sites "
+               },
+               "cols":12,
+               "esQuery":{
+
+               },
+               "dataMapping":{
+                  "source":"dest"
+               }
+            }
+         ]
+      }
+   ]
+}
