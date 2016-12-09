@@ -22,7 +22,7 @@
 
       var promises = [getDashboard(), getDashboardData(), getData(), getDashboardSites()];
       return $q.all(promises).then(function () {
-        logger.info('Activated Dashboard View');
+        // logger.info('Activated Dashboard View');
       });
 
 

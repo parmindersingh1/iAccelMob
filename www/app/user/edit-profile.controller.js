@@ -5,12 +5,12 @@
     .module('app.user')
     .controller('EditProfileController', EditProfileController);
 
-  EditProfileController.$inject = ['$q', 'userProfileFactory', '$state', '$http', 'validationHelperFactory','$stateParams', '$localStorage', '$cordovaCamera', '$ionicLoading' ];
+  EditProfileController.$inject = ['$q', 'userProfileFactory', '$state', '$http', 'logger', 'validationHelperFactory','$stateParams', '$localStorage', '$cordovaCamera', '$ionicLoading' ];
 
-  function EditProfileController($q, userProfileFactory, $state, $http, validationHelperFactory, $stateParams, $localStorage, $cordovaCamera, $ionicLoading) {
+  function EditProfileController($q, userProfileFactory, $state, $http, logger, validationHelperFactory, $stateParams, $localStorage, $cordovaCamera, $ionicLoading) {
     var vm = this;
 
-    vm.imgURI = "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg";
+    // vm.imgURI = "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg";
 
 
     var userID = $localStorage._identity.userDetails.id;
@@ -24,15 +24,15 @@
             vm.user = angular.copy(vm.master);
           }
           else if (response.status == 404) {
-            console.error('User not found', 'error');
+            logger.error('User not found', 'error');
             console.error(response);
           }
           else if (response.status == -1) {
-            console.error('Network Error', 'error');
+            logger.error('Network Error', 'error');
             console.error(response);
           }
           else {
-            console.error('Backend error', 'error');
+            logger.error('Backend error', 'error');
             console.error(response);
           }
         });
@@ -110,19 +110,20 @@
         else {
           userProfileFactory.edit(vm.user).then(function (response) {
             if (response.status == 200) {
+              logger.info('Profile Updated', 'default');
               $localStorage._identity.userDetails = response.data;
               $state.go('app.dashboard');
             }
             else if (response.status == -1) {
-              console.log('Network Error');
+              logger.error('Network Error');
               console.error(response);
             }
             else if (response.status == 400) {
-              console.log(response.data.errors[0].message);
+              logger.error(response.data.errors[0].message);
               console.error(response);
             }
             else {
-              console.log('Some problem');
+              logger.error('Some problem');
               console.error(response);
             }
           });

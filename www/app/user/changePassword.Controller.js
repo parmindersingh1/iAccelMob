@@ -5,9 +5,9 @@
     .module('app.user')
     .controller('ChangePasswordController', ChangePasswordController);
 
-  ChangePasswordController.$inject = ['$q', 'changePasswordFactory', '$state', 'validationHelperFactory', '$location', '$stateParams', '$localStorage'];
+  ChangePasswordController.$inject = ['$q', 'changePasswordFactory', '$state', 'logger','validationHelperFactory', '$location', '$stateParams', '$localStorage'];
 
-  function ChangePasswordController($q, changePasswordFactory, $state, validationHelperFactory, $location, $stateParams, $localStorage) {
+  function ChangePasswordController($q, changePasswordFactory, $state, logger, validationHelperFactory, $location, $stateParams, $localStorage) {
     var vm = this;
 
     vm.passData = {};
@@ -28,19 +28,19 @@
         changePasswordFactory.change(vm.passData).then(function (response) {
 
           if (response.status == 200) {
-            toast.show('Password Changed');
+            logger.info('Password Changed', 'default');
             $state.go('auth.signin');
           }
           else if (response.status == -1) {
-            toast.show('Network Error');
+            logger.error('Network Error', 'error');
             console.error(response);
           }
           else if (response.status == 400) {
-            toast.show(response.data[0].message);
+            logger.error(response.data[0].message, 'error');
             console.error(response);
           }
           else {
-            toast.show('Some problem');
+            logger.error(response.data[0].message, 'error');
             console.error(response);
           }
         });

@@ -691,7 +691,7 @@ ion-side-menu .item.active.item-complex > .item-content, .item.activated.item-co
 /* customization */
 
 
-.ionic_toast span {
+.toast-message  {
   color: #ffffff;
 }
 dt-box-header, dt-bar-graph, dt-wave-graph, dt-expenses-graph, dt-real-time-knob, dt-map-markers, ng-map {

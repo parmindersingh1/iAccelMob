@@ -20,6 +20,8 @@
             vm.master = response.data;
             console.log(response.data);
             vm.user = angular.copy(vm.master);
+            console.log(vm.user );
+            // vm.user.profilePictureUrl = "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg";
           }
           else if (response.status == 404) {
             console.error('User not found', 'error');
