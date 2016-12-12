@@ -8,7 +8,6 @@
       'ngStorage',
       'chart.js',
       'ngLetterAvatar',
-      'ui.knob',
       'ngMessages',
       'ion-autocomplete',
       'toastr',

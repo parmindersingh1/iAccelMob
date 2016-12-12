@@ -1,6 +1,18 @@
-/* ---------------------------------------------------------------------- */
-/*  Utilities
-/* ---------------------------------------------------------------------- */
+/*ion-side-menu ion-item.item {
+  background: none;
+}
+
+ion-side-menu ion-item.item .item-content .menu-group {
+  margin-left: 38px;
+  display:block;
+}
+
+ion-side-menu .item.active.item-complex > .item-content, .item.activated.item-complex > .item-content, .item-complex.active .item-content.item-complex > .item-content, .item-complex.activated .item-content.item-complex > .item-content, .item .item-content.active.item-complex > .item-content, .item .item-content.activated.item-complex > .item-content {
+    background-color: #23262a;
+    border-color: none;
+}
+
+
 .no-padding {
   padding: 0 !important;
 }
@@ -669,13 +681,12 @@
 
 
 
-/* customization */
 
 
-.ionic_toast span {
+.toast-message  {
   color: #ffffff;
 }
-dt-box-header, dt-bar-graph, dt-wave-graph, dt-expenses-graph, dt-real-time-knob {
+dt-box-header, dt-bar-graph, dt-wave-graph, dt-expenses-graph, dt-real-time-knob, dt-map-markers, ng-map {
   width: 100%;
 }
 .counter {
@@ -692,6 +703,21 @@ dt-box-header, dt-bar-graph, dt-wave-graph, dt-expenses-graph, dt-real-time-knob
 .panel-green .panel-tools .btn:hover, .panel-green .panel-tools > a:hover, .partition-green .panel-tools .btn:hover, .partition-green .panel-tools > a:hover {
   color: #ffffff !important;
 }
+.panel-pink, .partition-pink  {
+  background-color: #F5888D;
+  position: relative;
+  color: #ffffff;
+}
+.panel-orange, .partition-orange {
+    background-color: #F18636;
+    position: relative;
+    color: #ffffff;
+}
+.panel-yellow, .partition-yellow {
+  background-color: #EEB424;
+  position: relative;
+  color: #ffffff;
+}
 
 .panel-red, .partition-red {
   background-color: #C82E29;
@@ -706,8 +732,8 @@ dt-box-header, dt-bar-graph, dt-wave-graph, dt-expenses-graph, dt-real-time-knob
 }
 .label {
     display: inline;
-    padding: .2em .6em .3em;
-    font-size: 75%;
+    padding: .3em .6em;
+    font-size: 54%;
     font-weight: bold;
     line-height: 1;
     color: #fff;
@@ -718,9 +744,46 @@ dt-box-header, dt-bar-graph, dt-wave-graph, dt-expenses-graph, dt-real-time-knob
     margin: 6px;
 }
 
+.right-align {
+  right: 11px;
+  display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    height: 100%;
+    font-size: 32px;
+}
+
+
+.row {
+  border-bottom: 1px solid #E5E5E5;
+}
+.align-middle {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
 
 .text-extra-small, -extra-small span {
     font-size: 11px !important;
+}
+.text-small {
+  font-size: 15px !important;
+}
+.text-large {
+  font-size: 25px !important;
 }
 
 .text-primary, .text-primary span {
@@ -774,24 +837,46 @@ dt-box-header, dt-bar-graph, dt-wave-graph, dt-expenses-graph, dt-real-time-knob
 .text-white, .text-white span {
   color: #ffffff !important;
 }
+.text-data {
+  font-size: 25px !important;
+}
+.text-bold {
+  color: #000;
+}
 
-progress {
-  background-color: #fff;
-  border: 0;
-  height: 7px;
+.error-container {
+  margin: 5px 0;
 }
-progress::-webkit-progress-bar {
-  background-color: #e5e5e5;
-  border: 0;
-  height: 7px;
+
+.error-container:last-child {
+    margin: 5px 0 0;
 }
-progress::-webkit-progress-value {
-  background-color: #5A8770;
-  border: 0;
-  height: 7px;
+
+.error {
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #555;
+  vertical-align: middle;
 }
-progress::-moz-progress-bar {
-  background-color: #fff;
-  border: 0;
-  height: 7px;
+
+.error i {
+  font-size: 24px;
+  color: #B83E2C;
+  vertical-align: middle;
 }
+
+
+.has-errors {
+  border-bottom: 3px solid #B83E2C;
+}
+
+.no-errors {
+  border-bottom: 3px solid green;
+}
+.ion-autocomplete-cancel {
+  border-color: transparent !important;
+  background-color: #33779B !important;
+  color: #fff !important;
+  padding: 0 2px !important;
+}*/
