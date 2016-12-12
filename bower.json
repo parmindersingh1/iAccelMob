@@ -20,7 +20,10 @@
     "jQuery": "^3.1.1",
     "ngstorage": "^0.3.11",
     "ng-letter-avatar": "ngletteravatar#^4.0.4",
-    "chart.js": "^2.4.0"
+    "chart.js": "^2.4.0",
+    "npm": "^4.0.5",
+    "install": "^1.0.4",
+    "angular-chart.js": "^1.1.1"
   },
   "resolutions": {
     "angular": ">=1.2.0 <1.5.0",
