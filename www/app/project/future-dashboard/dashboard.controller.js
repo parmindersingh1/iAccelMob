@@ -230,7 +230,7 @@ angular
             vm.activate();
 
           }]);
-<<<<<<< HEAD
+
 
           angular
           .module('app.dashboard').controller('AlertsDashboardCtrl', ["$scope", "dashboardFactory","logger" ,
@@ -363,5 +363,4 @@ angular
 //     };
 //
 //   }]);
-=======
->>>>>>> c6146391b91a72f57b569752949487937364fd24
+
