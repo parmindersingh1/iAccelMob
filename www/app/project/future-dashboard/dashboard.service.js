@@ -8,6 +8,7 @@
   function dashboardFactory($http, __env) {
     var service = {};
 
+<<<<<<< HEAD
     service.getMainsData = function () { // TODO below need to be changed
     var promise = $http.get('http://localhost:8084/dashboard/mainConsumption?siteId=58005c16e855161f7d388cf0')
       .then(
@@ -112,6 +113,99 @@
         });
     return promise;
   };
+=======
+      service.getMainsData = function () { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/mainConsumption?siteId=58005c16e855161f7d388cf0')
+              .then(
+
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
+
+      service.getGensetData = function () { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl +'/dashboard/dgConsumption?siteId=58005c16e855161f7d388cf0')
+              .then(
+
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
+
+      service.getActiveHourData = function () { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/currentActive?siteId=58005c16e855161f7d388cf0')
+              .then(
+
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
+
+      service.getEnergyData = function () { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/dgMainHistogram?siteId=58005c16e855161f7d388cf0')
+              .then(
+
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
+
+      service.getTemperatureData = function () { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/temperature?siteId=58005c16e855161f7d388cf0')
+              .then(
+
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
+
+
+      service.getSupplyData = function () { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/parameters?siteId=58005c16e855161f7d388cf0')
+              .then(
+
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
+
+      service.getAssetData = function () { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/acStatus?siteId=58005c16e855161f7d388cf0')
+              .then(
+
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
+>>>>>>> c6146391b91a72f57b569752949487937364fd24
 
   service.getAlertData = function () { // TODO below need to be changed
      var promise = $http.get(__env.notificationServerUrl + '/alarms/dashboardData?siteId=58005c16e855161f7d388cf0')
