@@ -2,6 +2,9 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon ion-android-notifications"></button>
+  </ion-nav-buttons>
   <ion-nav-title>
     <span>{{vm.title}}</span>
   </ion-nav-title>
@@ -56,12 +59,11 @@
     </div>
 
 
-
    <div ng-controller="MainSupplyCtrl as mainSupply">
 
        <dt-mains-reading-widget activate="mainSupply.activate()" data="mainSupply.data"></dt-mains-reading-widget>
 
-     </div>
+   </div>
 
 
    <!-- <div class="card item">
@@ -150,13 +152,11 @@
 
       </div>
 
+    <div ng-controller="AlertsDashboardCtrl as alerts">
 
+      <dt-alerts-widget activate="alerts.activate()" data="alerts.data"></dt-alerts-widget>
 
-
-</div>
-
-
-
+    </div>
 
 
           <!-- <div class="row">

@@ -51,6 +51,23 @@
         }
       },
       {
+        state: 'app.command',
+        config: {
+          url: '/command',
+          views: {
+            'menuContent': {
+                templateUrl: '/app/project/future-dashboard/command.html',
+                data: {
+                  roles: ['User']
+                },
+                controller: 'CommandController',
+                controllerAs: 'vm',
+                bindToController : true
+              }
+            }
+      }
+      },
+      {
         state: 'app.dashboardAll',
         config: {
           url: '/dashboardAll',

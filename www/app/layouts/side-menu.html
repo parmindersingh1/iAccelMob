@@ -94,12 +94,16 @@
 
 
 
-
+        <ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.command" ng-if="vm.currentAccessLevel = vm.ACCESS_LEVEL.SUPER_ADMIN && vm.isAdminRole == true">
+          <i class="icon ion-information"></i>
+          <h2 class="menu-text">Commands</h2>
+        </ion-item>
 
         <ion-item class="item-icon-left" nav-clear menu-close ui-sref="auth.signout">
           <i class="icon ion-android-exit"></i>
           <h2 class="menu-text">Logout</h2>
         </ion-item>
+
 
     </ion-list>
     </ion-content>

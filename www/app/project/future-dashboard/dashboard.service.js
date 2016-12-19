@@ -73,6 +73,19 @@
     return promise;
   };
 
+   service.getEnergyData = function () { // TODO below need to be changed
+      var promise = $http.get('http://localhost:8084/dashboard/dgMainHistogram?siteId=58005c16e855161f7d388cf0')
+        .then(
+
+          function (response) {
+            return response;
+          },
+          function (response) {
+            return response;
+          });
+      return promise;
+    };
+
 
   service.getSupplyData = function () { // TODO below need to be changed
     var promise = $http.get('http://localhost:8084/dashboard/parameters?siteId=58005c16e855161f7d388cf0')
@@ -89,6 +102,19 @@
 
   service.getAssetData = function () { // TODO below need to be changed
     var promise = $http.get('http://localhost:8084/dashboard/acStatus?siteId=58005c16e855161f7d388cf0')
+      .then(
+
+        function (response) {
+          return response;
+        },
+        function (response) {
+          return response;
+        });
+    return promise;
+  };
+
+  service.getAlertData = function () { // TODO below need to be changed
+     var promise = $http.get(__env.notificationServerUrl + '/alarms/dashboardData?siteId=58005c16e855161f7d388cf0')
       .then(
 
         function (response) {

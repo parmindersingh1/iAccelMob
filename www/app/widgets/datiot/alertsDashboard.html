@@ -1,0 +1,19 @@
+<div class="card item">
+  <div class="padding-vertical">
+    <h2 class="title text-bold padding">
+        Alerts </h2><hr>
+        <div class = "row padding-vertical-10" ng-if="alerts.data == null">
+           <div class = "col align-middle text-center">No Alerts</div>
+        </div>
+
+        <div class = "row padding-vertical-10" ng-repeat="row in alerts.data">
+           <div >
+             <span class="text-small block text-light">{{row.date}}</span>
+    
+           <div class = "text-small"><a href="#" style="text-decoration:none">{{row.alarmName}}</a></div>
+           </div>
+        </div>
+  </div>
+</div>
+
+

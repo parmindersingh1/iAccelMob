@@ -26,12 +26,16 @@
     $scope.$watch($scope.user);
   }
 
-  ActiveHourWidgetCtrl.$inject = ['$http', '$localStorage' , '$scope' ,'$timeout'];
+  ActiveHourWidgetCtrl.$inject = ['$http', '$localStorage' , '$scope' ,'$timeout', '$ionicScrollDelegate'];
 
-  function ActiveHourWidgetCtrl($http, $localStorage , $scope , $timeout) {
+  function ActiveHourWidgetCtrl($http, $localStorage , $scope , $timeout, $ionicScrollDelegate) {
     var vm = this;
+    vm.scrollTop = scrollTop;
     
-
+     function scrollTop () {
+        $ionicScrollDelegate.scrollTop();
+        console.log(scrollTop());
+      }
 
   }
 })();

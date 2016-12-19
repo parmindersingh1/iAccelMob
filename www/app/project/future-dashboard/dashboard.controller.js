@@ -231,6 +231,26 @@ angular
 
           }]);
 
+          angular
+          .module('app.dashboard').controller('AlertsDashboardCtrl', ["$scope", "dashboardFactory","logger" ,
+          function($scope , dashboardFactory, logger) {
+
+            var vm = this;
+
+            vm.activate = function (){
+              dashboardFactory.getAlertData().then(function (response) {
+                if(response.data != null) {
+                  vm.data = response.data;
+                }
+              })
+                .catch(function (error) {
+                  logger.error(error);
+                });
+            }
+
+            vm.activate();
+
+          }]);
 
 
 
