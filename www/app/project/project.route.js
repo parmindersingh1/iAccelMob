@@ -67,6 +67,23 @@
             }
       }
       },
+        {
+            state: 'app.notification',
+            config: {
+                url: '/notification',
+                views: {
+                    'menuContent': {
+                        templateUrl: '/app/project/future-dashboard/notification.html',
+                        data: {
+                            roles: ['User']
+                        },
+                        controller: 'NotificationController',
+                        controllerAs: 'vm',
+                        bindToController : true
+                    }
+                }
+            }
+        },
       {
         state: 'app.dashboardAll',
         config: {

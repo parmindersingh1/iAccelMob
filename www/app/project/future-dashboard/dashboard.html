@@ -3,39 +3,12 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
-    <button menu-toggle="right" class="button button-icon ion-android-notifications"></button>
+    <button menu-toggle="right" class="button button-icon ion-android-notifications" ui-sref="app.notification"> </button>
   </ion-nav-buttons>
   <ion-nav-title>
     <span>{{vm.title}}</span>
   </ion-nav-title>
   <ion-content>
-
-<!-- <div class="list layouts-functionalities">
-  <div class="card item item-icon-right">
-    <div class="padding">
-      <h2 class="title text-bold">
-          MAINS CONSUMPTION </h2>
-
-      <div class="padding-top">
-        <h2 class="text-data text-green margin-bottom-5">24 Kw</h2>
-        <span class="text-light text-bold margin-right-10">+1.3Kw</span><span class="text-small">+0.05%</span>
-      </div>
-    </div>
-    <i class="icon ion-arrow-swap"></i>
-  </div>
-
- <div class="card item item-icon-right">
-    <div class="padding">
-      <h2 class="title text-bold">
-          GENSET CONSUMPTION </h2>
-
-      <div class="padding-top">
-        <h2 class="text-data text-info margin-bottom-5">8 Kw</h2>
-        <span class="text-light text-bold margin-right-10">-0.3wK</span><span class="text-small">-0.05%</span>
-      </div>
-    </div>
-    <i class="icon ion-arrow-swap"></i>
-  </div> -->
 
   <div ng-controller="ConsumptionCtrl as mains">
 
