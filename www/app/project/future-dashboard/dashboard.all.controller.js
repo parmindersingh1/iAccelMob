@@ -20,6 +20,10 @@
 
       var promises = [getDashboard(), getDashboardData(), getData()];
       return $q.all(promises).then(function () {
+        //  dashboardFactory.allSiteData().then(function (response) {
+        //   console.log(response.data);
+        //   vm.pnpsite = response.data;
+        // });
         console.log('Activated Dashboard View');
       });
 
@@ -62,6 +66,17 @@
         //console.log(response.data);
         vm.dashboardData = response.data;
         return vm.dashboardData;
+      });
+    }
+
+    function getDashboardSites() {
+      vm.markers = [];
+      return dashboardFactory.getDashboardSites().then(function (response) {
+        var data = response.data;
+        console.log(response.data);
+        vm.markers = data.markers;
+        vm.siteLocation = data.center;
+        return null;
       });
     }
   }

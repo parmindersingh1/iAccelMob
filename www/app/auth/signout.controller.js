@@ -16,6 +16,8 @@
       principal.signout();
       console.log("User log out successfully");
       $state.go('auth.signin');
+
     }
+
   }
 })();

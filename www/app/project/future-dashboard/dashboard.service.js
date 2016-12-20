@@ -163,6 +163,18 @@
       return promise;
     };
 
+     service.allSiteData = function(id) {
+      var promise = $http.get(__env.dataServerUrl + '/dashboard/currentActive?siteId=58005c16e855161f7d388cf0')
+        .then(
+          function (response) {
+            return response;
+          },
+          function (response) {
+            return response;
+          });
+      return promise;
+    };
+
 
     return service;
   };
