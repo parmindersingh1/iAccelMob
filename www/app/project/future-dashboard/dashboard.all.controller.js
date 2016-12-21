@@ -18,13 +18,13 @@
 
     function activate() {
 
-      var promises = [getDashboard(), getDashboardData(), getData()];
+      var promises = [getDashboard(), getDashboardData(), getData(), getDashboardSites()];
       return $q.all(promises).then(function () {
-        //  dashboardFactory.allSiteData().then(function (response) {
-        //   console.log(response.data);
-        //   vm.pnpsite = response.data;
-        // });
-        console.log('Activated Dashboard View');
+         dashboardFactory.allSiteData().then(function (response) {
+          console.log(response.data);
+          vm.pnpsite = response.data;
+        });
+       
       });
 
 

@@ -5,12 +5,27 @@
         .module('app.dashboard')
         .controller('NotificationController', NotificationController);
 
-    NotificationController.$inject = ['$scope', '$q', 'logger'];
+    NotificationController.$inject = ['$scope', '$q', 'logger', 'dashboardFactory'];
     /* @ngInject */
-    function NotificationController($scope, $q, logger ) {
+    function NotificationController($scope, $q, logger, dashboardFactory) {
         var vm = this;
+        vm.activate = activate;
 
+    function activate() {
+
+    	 dashboardFactory.getAlertData().then(function (response) {
+                if(response.data != null) {
+                  vm.data = response.data;
+                  console.log(response.data)
+                }
+              })
+                .catch(function (error) {
+                  logger.error(error);
+                });
 
     }
+    activate();
+
+}
 
 })();
