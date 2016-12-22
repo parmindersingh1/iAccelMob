@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('SigninController', SigninController);
 
-  SigninController.$inject = ['$scope', '$state', 'principal', "__env"];
+  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', "__env"];
   /* @ngInject */
-  function SigninController($scope, $state, principal, __env) {
+  function SigninController($scope, logger, $state, principal,  __env) {
     var vm = this;
 
     vm.signin = signin;

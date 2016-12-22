@@ -5,14 +5,20 @@
     .module('app.user')
     .controller('userProfileController', UserProfileController);
 
-  UserProfileController.$inject = ['$localStorage', '__env' ,'userProfileFactory' ,'$state' ];
+  UserProfileController.$inject = ['$localStorage', '__env' ,'userProfileFactory' ,'$state'];
 
   function UserProfileController( $localStorage, __env ,userProfileFactory ,$state) {
     var vm = this;
+     vm.reset = reset;
+
 
     var userID = $localStorage._identity.userDetails.id;
 
     activate(userID);
+
+    function reset() {
+      activate(userID);
+    }
 
     function activate(id) {
       userProfileFactory.alluser(id).then(function (response) {
@@ -38,6 +44,7 @@
           // self.resetDisabled = false;
           // self.submitDisabled = false;
         });
+      // reset();
     }
 
 
