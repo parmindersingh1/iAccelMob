@@ -45,7 +45,8 @@
                 controller: 'DashboardController',
                 controllerAs: 'vm',
                 bindToController : true,
-                title: 'Site Dashboard'
+                title: 'Site Dashboard',
+                cache: false
               }
             }
         }
