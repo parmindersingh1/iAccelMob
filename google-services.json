@@ -1,25 +1,29 @@
 {
   "project_info": {
-    "project_number": "523372416376",
-    "firebase_url": "https://iaccelmob.firebaseio.com",
-    "project_id": "iaccelmob",
-    "storage_bucket": "iaccelmob.appspot.com"
+    "project_number": "451065190007",
+    "firebase_url": "https://iaccel-29a11.firebaseio.com",
+    "project_id": "iaccel-29a11",
+    "storage_bucket": "iaccel-29a11.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:523372416376:android:23a2e54e4a4521cb",
+        "mobilesdk_app_id": "1:451065190007:android:787befe9ad814164",
         "android_client_info": {
-          "package_name": "com.datiot.iAccel"
+          "package_name": "com.datiot.iaccel"
         }
       },
       "oauth_client": [
         {
-          "client_id": "523372416376-qttjkfhdlr3knpsbn02buaheb7167flt.apps.googleusercontent.com",
+          "client_id": "451065190007-9j3f34rqmspmn6b8s8fugi35pg79nki4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
-      "api_key": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_G94JSQ7JUcLe4L_Gqmjl45Cwnsbo7kw"
+        }
+      ],
       "services": {
         "analytics_service": {
           "status": 1
