@@ -36,18 +36,18 @@
     }
 
     function currentAccessLevel() {
-      var roles = $localStorage._identity.userDetails.userRoles;
-      var index = _.findIndex(roles, function(o) { return o.role.name.includes('SUPER')});
+       var roles = $localStorage._identity.userDetails.userRoles;
+      var index = _.findIndex(roles, function(o) { return _.includes(o.role.name,'SUPER')});
       if(index >= 0) return ACCESS_LEVEL.SUPER_ADMIN; //100000 for super admin access level
-      index = _.findIndex(roles, function(o) { return o.role.name.includes('CLIENT')});
+      index = _.findIndex(roles, function(o) { return _.includes(o.role.name,'CLIENT')});
       if(index >= 0) return ACCESS_LEVEL.CLIENT_ADMIN; //10000 for client level
-      index = _.findIndex(roles, function(o) { return o.role.name.includes('REGION')});
+      index = _.findIndex(roles, function(o) { return _.includes(o.role.name,'REGION')});
       if(index >= 0) return ACCESS_LEVEL.REGION_ADMIN; //1000 for region level
-      index = _.findIndex(roles, function(o) { return o.role.name.includes('SITE')});
+      index = _.findIndex(roles, function(o) { return _.includes(o.role.name,'SITE')});
       if(index >= 0) return ACCESS_LEVEL.SITE_ADMIN; //100 for region level
-      index = _.findIndex(roles, function(o) { return o.role.name.includes('ASSETGROUP')});
+      index = _.findIndex(roles, function(o) { return _.includes(o.role.name,'ASSETGROUP')});
       if(index >= 0) return ACCESS_LEVEL.ASSET_GROUP_ADMIN; //10 for asset group level
-      index = _.findIndex(roles, function(o) { return o.role.name.includes('ASSET')});
+      index = _.findIndex(roles, function(o) { return _.includes(o.role.name,'ASSET')});
       if(index >= 0) return ACCESS_LEVEL.ASSET_ADMIN; //1 for asset level
       else return 0;
     }
