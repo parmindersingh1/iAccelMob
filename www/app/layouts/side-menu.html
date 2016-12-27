@@ -101,8 +101,8 @@
 
   
         <ion-item class="item-icon-left" ng-if="vm.currentAccessLevel >= vm.ACCESS_LEVEL.CLIENT_ADMIN  && vm.isAdminRole == true" nav-clear menu-close ui-sref="app.dashboardAll">
-          <i class="icon ion-android-exit"></i>
-          <h2 class="menu-text">All Sites</h2>
+          <ng-letter-avatar data="Sites" height="16" width="20" avatarcustombgcolor="black" box="square"></ng-letter-avatar>&nbsp &nbsp
+          <h2 class="menu-text inline-block">All Sites</h2>
         </ion-item>
 
         <ion-item class="item-icon-left" nav-clear menu-close ui-sref="auth.signout">
