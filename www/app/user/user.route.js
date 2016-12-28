@@ -21,7 +21,7 @@
             'menuContent': {
               controller:'userProfileController',
               controllerAs:'vm',
-              templateUrl: '/app/user/user-profile.html',
+              templateUrl: 'app/user/user-profile.html',
               data: {
                 roles: ['User']
               }
@@ -37,7 +37,7 @@
             'menuContent': {
               controller:'EditProfileController',
               controllerAs:'vm',
-              templateUrl: '/app/user/edit-profile.html',
+              templateUrl: 'app/user/edit-profile.html',
               data: {
                 roles: ['User']
               }
@@ -53,7 +53,7 @@
             'menuContent': {
               controller:'ChangePasswordController',
               controllerAs:'vm',
-              templateUrl: '/app/user/changePassword.html'
+              templateUrl: 'app/user/changePassword.html'
             }
           }
         }

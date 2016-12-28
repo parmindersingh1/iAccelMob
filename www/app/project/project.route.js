@@ -8,7 +8,7 @@
   appRun.$inject = ['routerHelper'];
   /* @ngInject */
   function appRun(routerHelper) {
-    var otherwise = '/app/dashboard';
+    var otherwise = 'app/dashboard';
     routerHelper.configureStates(getStates(), otherwise);
   }
 
@@ -19,7 +19,7 @@
         config: {
           url: '/app',
           //template: '<div ui-view class="fade-in-up"></div>',
-          templateUrl: '/app/layouts/side-menu.html',
+          templateUrl: 'app/layouts/side-menu.html',
           abstract: 'true',
           resolve: {
             authorize: ['authorization',
@@ -38,7 +38,7 @@
           url: '/dashboard',
           views: {
             'menuContent': {
-                templateUrl: '/app/project/future-dashboard/dashboard.html',
+                templateUrl: 'app/project/future-dashboard/dashboard.html',
                 data: {
                   roles: ['User']
                 },
@@ -57,7 +57,7 @@
           url: '/command',
           views: {
             'menuContent': {
-                templateUrl: '/app/project/future-dashboard/command.html',
+                templateUrl: 'app/project/future-dashboard/command.html',
                 data: {
                   roles: ['User']
                 },
@@ -74,7 +74,7 @@
                 url: '/notification',
                 views: {
                     'menuContent': {
-                        templateUrl: '/app/project/future-dashboard/notification.html',
+                        templateUrl: 'app/project/future-dashboard/notification.html',
                         data: {
                             roles: ['User']
                         },
@@ -91,7 +91,7 @@
           url: '/dashboardAll',
           views: {
             'menuContent': {
-                templateUrl: '/app/project/future-dashboard/dashboard-all.html',
+                templateUrl: 'app/project/future-dashboard/dashboard-all.html',
                 data: {
                   roles: ['User']
                 },
