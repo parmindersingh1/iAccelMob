@@ -31,3 +31,5 @@ PREVIEW/
 scss_copy/
 gulp-tasks/distribution.copy.js
 APK/
+
+.idea/*
