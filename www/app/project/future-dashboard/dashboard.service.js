@@ -175,6 +175,18 @@
       return promise;
     };
 
+    service.getAssetInfo = function(id) {
+      var promise = $http.get( '/data/getDashboardSites.json')
+        .then(
+          function (response) {
+            return response;
+          },
+          function (response) {
+            return response;
+          });
+      return promise;
+    };
+
 
     return service;
   };
