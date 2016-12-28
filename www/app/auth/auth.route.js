@@ -24,7 +24,7 @@
         state: 'auth.signin',
         config: {
           url: '/signin',
-          templateUrl: "/app/auth/login_login.html",
+          templateUrl: "app/auth/login_login.html",
           controller: 'SigninController',
           controllerAs: 'vm'
         }
@@ -40,7 +40,7 @@
         state: 'auth.forgot',
         config: {
           url: '/forgot',
-          templateUrl: "/app/auth/login_forgot.html",
+          templateUrl: "app/auth/login_forgot.html",
           controller: 'ForgotController',
           controllerAs: 'vm'
         }
@@ -49,14 +49,14 @@
         state: 'auth.registration',
         config: {
           url: '/registration',
-          templateUrl: "/app/auth/login_registration.html"
+          templateUrl: "app/auth/login_registration.html"
         }
       },
       {
         state: 'auth.reset',
         config: {
           url: '/reset',
-          templateUrl: "/app/auth/reset_password.html",
+          templateUrl: "app/auth/reset_password.html",
           controller: 'ResetController',
           controllerAs: 'vm'
         }
@@ -65,7 +65,7 @@
         state: 'auth.lockscreen',
         config: {
           url: '/lock',
-          templateUrl: "/app/auth/login_lock_screen.html"
+          templateUrl: "app/auth/login_lock_screen.html"
         }
       }
     ];
