@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('ForgotController', ForgotController);
 
-  ForgotController.$inject = ['$q','forgotFactory','$state', 'validationHelperFactory', 'toast'];
+  ForgotController.$inject = ['$q','forgotFactory','$state', 'validationHelperFactory', 'logger'];
 
-  function ForgotController($q, forgotFactory, $state, validationHelperFactory, toast) {
+  function ForgotController($q, forgotFactory, $state, validationHelperFactory, logger) {
     var vm = this;
 
     vm.submit = function() {
@@ -21,21 +21,21 @@
         forgotFactory.abc(vm.email).then(function (response) {
 
           if (response.status == 200) {
-            toast.show('This is a toast at the top.');
+            logger.info('Password Reset Successfull.');
             $state.go('auth.signin');
           }
           else if (response.status == -1) {
-            toast.show('Network Error');
+            logger.error('Network Error');
             console.error(response);
           }
           else if (response.status == 400) {
-            toast.show('Invalid data received at backend');
+            logger.error('Invalid data received at backend');
             console.error(response);
           }else if (response.status == 404) {
-            toast.show(response.data[0].message);
+            logger.error(response.data[0].message);
           }
           else {
-            toast.show('Some problem');
+            logger.error('Some problem');
             console.error(response);
           }
         });
