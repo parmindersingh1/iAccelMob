@@ -10,7 +10,7 @@
   function CommandController($state, dashboardFactory, logger) {
     var vm = this;
     vm.temp = {};
-
+    vm.title = "command";
     activate();
 
     function activate() {
