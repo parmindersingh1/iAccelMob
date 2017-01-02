@@ -20,7 +20,7 @@
     vm.isViewerRole = role.isViewerRole();
     vm.currentAccessLevel = role.currentAccessLevel();
     vm.ACCESS_LEVEL = ACCESS_LEVEL;
-
+    console.log("vm.ACCESS_LEVEL is",role.isAdminRole());
 
   // for multivel side menu
     // vm.group = {};
