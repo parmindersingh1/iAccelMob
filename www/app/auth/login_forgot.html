@@ -7,7 +7,8 @@
             <!-- <my-tabs>
                <my-tab title="Forgot Password"> -->
                   <div class="item item-body">
-                    <label class="item item-input" ng-class="{ 'has-errors' : forgot_password_form.user_email.$dirty && forgot_password_form.user_email.$invalid, 'no-errors' : forgot_password_form.user_email.$dirty && forgot_password_form.user_email.$valid}">
+                    <label class="item item-input" ng-class="{ 'has-errors' : forgot_password_form.user_email.$dirty && forgot_password_form.user_email.$invalid,
+                     'no-errors' : forgot_password_form.user_email.$dirty && forgot_password_form.user_email.$valid}">
                       <input type="email" placeholder="Email" name="user_email" ng-model="vm.email" required>
                     </label>
                      <div class="error-container" ng-show="forgot_password_form.user_email.$dirty && forgot_password_form.user_email.$error"

@@ -27,37 +27,32 @@
        
       });
 
-
-
-
-      // var promises = [getMessageCount(), getPeople()];
-      // return $q.all(promises).then(function() {
-      //   //logger.info('Activated Dashboard View');
-      // });
-
     }
 
     function getData() {
       return dashboardFactory.getData()
-        .then(function (response) {
-          console.log(response);
-          vm.boxData = response.data.dashboardData.item;
-          vm.BarGraphData = response.data.barGraphData;
-          vm.WaveGraphData = response.data.waveGraphData;
-          vm.ExpensesGraphData = response.data.expensesGraphData;
-          vm.KnobData = response.data.realTimeKnobData;
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
+          .then(function (response) {
+            if(response.data != null){
+              vm.boxData = response.data.dashboardData.item;
+              vm.BarGraphData = response.data.barGraphData;
+              vm.WaveGraphData = response.data.waveGraphData;
+              vm.ExpensesGraphData = response.data.expensesGraphData;
+              vm.KnobData = response.data.realTimeKnobData;
+            }
+          })
+          .catch(function (error) {
+            logger.error(error);
+          });
     }
 
     function getDashboard() {
       return dashboardFactory.getDashboard().then(function (response) {
-        console.log(response.data.title);
-        vm.dashboard = response.data;
-        vm.title = response.data.title;
-        return vm.dashboard;
+        if(response.data != null){
+          console.log(response.data.title);
+          vm.dashboard = response.data;
+          vm.title = response.data.title;
+          return vm.dashboard;
+        }
       });
     }
 
@@ -72,11 +67,12 @@
     function getDashboardSites() {
       vm.markers = [];
       return dashboardFactory.getDashboardSites().then(function (response) {
-        var data = response.data;
-        console.log(response.data);
-        vm.markers = data.markers;
-        vm.siteLocation = data.center;
-        return null;
+        if (response.data != null){
+          var data = response.data;
+          vm.markers = data.markers;
+          vm.siteLocation = data.center;
+          return null;
+        }
       });
     }
   }

@@ -2,8 +2,8 @@
   <div class="padding-vertical">
     <h2 class="title text-bold padding">
         Alerts </h2><hr>
-        <div class = "row padding-vertical-10" ng-if="alerts.data == null">
-           <div class = "col align-middle text-center">No Alerts</div>
+        <div class = "row padding-vertical-10" ng-if="alerts.data.length == 0">
+           <div class = "col align-middle text-center">No Alerts !!</div>
         </div>
 
         <div class = "row padding-vertical-10" ng-repeat="row in alerts.data">

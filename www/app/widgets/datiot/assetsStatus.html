@@ -11,10 +11,11 @@
         <div class = "row padding-vertical-10" ng-repeat="row in assetStatus.data">
            <div class = "col align-middle text-center">
              <span class="text-small block text-light">{{row.assetName}}</span>
-             <a href="#" style="text-decoration:none">  Main Display </a></div>
+           </div>
            <div class = "col align-middle">
              <span class="text-center">
-               <span class="label partition-orange text-small">Off</span>
+               <span  ng-if="row.status == 'OFF'" class="label partition-orange text-small">{{row.status}}</span>
+               <span ng-if="row.status == 'ON'" class="label partition-orange text-small">{{row.status}}</span>
              </span>
            </div>
            <div class = "col align-middle text-center">{{row.energyConsumed}}</div>

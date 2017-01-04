@@ -1,5 +1,3 @@
-//define constants
-//see /src/client/app/core/constant.js
 
 (function (window) {
   window.__env = window.__env || {};

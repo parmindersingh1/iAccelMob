@@ -58,11 +58,11 @@
           url: '/command',
           views: {
             'menuContent': {
-                templateUrl: 'app/project/future-dashboard/command.html',
+                templateUrl: 'app/project/future-dashboard/settings.html',
                 data: {
                   roles: ['User']
                 },
-                controller: 'CommandController',
+                controller: 'ControlAsset',
                 controllerAs: 'vm',
                 bindToController : true
               }
