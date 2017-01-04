@@ -7,7 +7,7 @@ angular
   validationHelperFactory.$inject=[];
   function validationHelperFactory() {
     var service = {};
-  console.log("1");
+  //console.log("1");
     service.manageValidationFailed = function(form) {
       console.log("2");
       var firstError = null;

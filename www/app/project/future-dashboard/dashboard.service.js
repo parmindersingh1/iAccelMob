@@ -176,7 +176,7 @@
     };
 
     service.getAssetInfo = function(id) {
-      var promise = $http.get( '/data/getDashboardSites.json')
+      var promise = $http.get(__env.dataServerUrl + '/assetStatus/digitalOutput?siteId=58005c16e855161f7d388cf0')
         .then(
           function (response) {
             return response;
