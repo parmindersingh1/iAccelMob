@@ -3,19 +3,20 @@
 
   angular
     .module('app.dashboard')
-    .controller('CommandController', CommandController);
+    .controller('ControlAsset', ControlAsset);
 
-  CommandController.$inject = ['$state', 'dashboardFactory', 'logger'];
+  ControlAsset.$inject = ['assetControllerfactory', '$state', 'logger', '$http', 'validationHelperFactory', '$localStorage', '__env', '$scope'];
   /* @ngInject */
-  function CommandController($state, dashboardFactory, logger) {
+  function ControlAsset(assetControllerfactory, $state, logger, $http, validationHelperFactory, $localStorage, __env, $scope) {
     var vm = this;
     vm.temp = {};
     vm.title = "command";
     activate();
 
     function activate() {
+       vm.disableTime = true;
 
-      dashboardFactory.getAssetInfo().then(function (response) {
+      assetControllerfactory.getAssetInfo().then(function (response) {
         if (response.status == 200) {
           vm.master = angular.copy(response.data);
           if(vm.master.AC1.disabled || vm.master.AC2.disabled || vm.master.AC3.disabled || vm.master.Signage.disabled){
