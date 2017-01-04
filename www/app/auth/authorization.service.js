@@ -51,7 +51,7 @@
     }
 
     function identityResolvedFailure() {
-        logger.info("User is not logged in. Redirecting to Login Page");
+        //logger.info("User is not logged in. Redirecting to Login Page");
       routeToSignin();
     }
 

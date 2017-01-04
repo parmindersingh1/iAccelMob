@@ -21,7 +21,7 @@
         forgotFactory.abc(vm.email).then(function (response) {
 
           if (response.status == 200) {
-            logger.info('Password Reset Successfull.');
+            logger.info('Password Reset Link Sent To E-Mail');
             $state.go('auth.signin');
           }
           else if (response.status == -1) {
