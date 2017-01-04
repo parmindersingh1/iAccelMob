@@ -163,6 +163,15 @@ angular
 
       vm.activate();
 
+      var myInterval = $interval(function () {
+        vm.activate();
+      }, DASHBOARD_REFRESH_RATE.TIME_INTERVAL);
+
+      $scope.$on('$destroy', function(){
+        $interval.cancel(myInterval)
+      });
+
+
     }]);
 
 
@@ -195,6 +204,13 @@ angular
         }
 
         vm.activate();
+        var myInterval = $interval(function () {
+          vm.activate();
+        }, DASHBOARD_REFRESH_RATE.TIME_INTERVAL);
+
+        $scope.$on('$destroy', function(){
+          $interval.cancel(myInterval)
+        });
 
       }]);
 
@@ -227,16 +243,32 @@ angular
 
             vm.activate = function (){
               dashboardFactory.getAssetData().then(function (response) {
-                if(response.data != null) {
-                  vm.data = response.data;
+                if (response.data != null) {
+                  vm.master = angular.copy(response.data);
+                  for (var index=0 ; index < vm.master.length; index++){
+                    if(vm.master[index].status == "1"){
+                      vm.master[index].status = "ON";
+                    }
+                    else{
+                      vm.master[index].status = "OFF";
+                    }
+                  }
+                  vm.data = angular.copy(vm.master);
                 }
               })
-                .catch(function (error) {
-                  logger.error(error);
-                });
+                  .catch(function (error) {
+                    logger.error(error);
+                  });
             }
 
             vm.activate();
+            var myInterval = $interval(function () {
+              vm.activate();
+            }, DASHBOARD_REFRESH_RATE.TIME_INTERVAL);
+
+            $scope.$on('$destroy', function(){
+              $interval.cancel(myInterval)
+            });
 
           }]);
 
@@ -259,5 +291,12 @@ angular
             }
 
             vm.activate();
+            var myInterval = $interval(function () {
+              vm.activate();
+            }, DASHBOARD_REFRESH_RATE.TIME_INTERVAL);
+
+            $scope.$on('$destroy', function(){
+              $interval.cancel(myInterval)
+            });
 
           }]);
