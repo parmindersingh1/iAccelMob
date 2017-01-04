@@ -15,15 +15,15 @@
                            </label>
 
                            <div class="error-container" ng-show="login_form.user_email.$dirty && login_form.user_email.$error"
-                            ng-messages="login_form.user_email.$error" ng-messages-include="/app/layouts/error-messages.html">
+                            ng-messages="login_form.user_email.$error" ng-messages-include="app/layouts/error-messages.html">
                           </div>
 
                             <label class="item item-input" ng-class="{'has-errors' : login_form.user_password.$dirty && login_form.user_password.$invalid, 'no-errors' : login_form.user_password.$dirty && login_form.user_password.$valid }" show-hide-container>
-                              <input type="password"  placeholder="Password"  name="user_password"  ng-model="vm.password" ng-minlength="5" ng-maxlength="20" required show-hide-input>
+                              <input type="password"  placeholder="Password"  name="user_password"  ng-model="vm.password" ng-minlength="6" ng-maxlength="20" required show-hide-input>
                             </label>
 
                             <div class="error-container last-error-container" ng-show="login_form.user_password.$dirty && login_form.user_password.$error"
-                              ng-messages="login_form.user_password.$error" ng-messages-include="/app/layouts/error-messages.html">
+                              ng-messages="login_form.user_password.$error" ng-messages-include="app/layouts/error-messages.html">
                             </div>
                         </div>
                       <!-- </my-tab>
