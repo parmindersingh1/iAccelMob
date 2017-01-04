@@ -15,7 +15,7 @@
                            </label>
 
                            <div class="error-container" ng-show="login_form.user_email.$dirty && login_form.user_email.$error"
-                            ng-messages="login_form.user_email.$error" ng-messages-include="/app/layouts/error-messages.html">
+                            ng-messages="login_form.user_email.$error" ng-messages-include="app/layouts/error-messages.html">
                           </div>
 
                             <label class="item item-input" ng-class="{'has-errors' : login_form.user_password.$dirty && login_form.user_password.$invalid, 'no-errors' : login_form.user_password.$dirty && login_form.user_password.$valid }" show-hide-container>
@@ -23,7 +23,7 @@
                             </label>
 
                             <div class="error-container last-error-container" ng-show="login_form.user_password.$dirty && login_form.user_password.$error"
-                              ng-messages="login_form.user_password.$error" ng-messages-include="/app/layouts/error-messages.html">
+                              ng-messages="login_form.user_password.$error" ng-messages-include="app/layouts/error-messages.html">
                             </div>
                         </div>
                       <!-- </my-tab>

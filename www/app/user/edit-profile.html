@@ -44,7 +44,7 @@
               </label>
 
               <div class="error-container" ng-show="vm.Form.firstName.$dirty && vm.Form.firstName.$error"
-               ng-messages="vm.Form.firstName.$error" ng-messages-include="/app/layouts/error-messages.html">
+               ng-messages="vm.Form.firstName.$error" ng-messages-include="app/layouts/error-messages.html">
              </div>
 
               <label class="item item-input item-floating-label" ng-class="{ 'has-errors' : vm.Form.lastName.$dirty && vm.Form.lastName.$invalid, 'no-errors' : vm.Form.lastName.$dirty && vm.Form.lastName.$valid}">
@@ -54,7 +54,7 @@
               </label>
 
               <div class="error-container" ng-show="vm.Form.lastName.$dirty && vm.Form.lastName.$error"
-               ng-messages="vm.Form.lastName.$error" ng-messages-include="/app/layouts/error-messages.html">
+               ng-messages="vm.Form.lastName.$error" ng-messages-include="app/layouts/error-messages.html">
              </div>
 
               <label class="item item-input item-floating-label" ng-class="{ 'has-errors' : vm.Form.email.$dirty && vm.Form.email.$invalid, 'no-errors' : vm.Form.email.$dirty && vm.Form.email.$valid}">
@@ -64,7 +64,7 @@
               </label>
 
               <div class="error-container" ng-show="vm.Form.email.$dirty && vm.Form.email.$error"
-               ng-messages="vm.Form.email.$error" ng-messages-include="/app/layouts/error-messages.html">
+               ng-messages="vm.Form.email.$error" ng-messages-include="app/layouts/error-messages.html">
              </div>
 
 
@@ -76,7 +76,7 @@
               </label>
 
               <div class="error-container" ng-show="vm.Form.mobile.$dirty && vm.Form.mobile.$error"
-               ng-messages="vm.Form.mobile.$error" ng-messages-include="/app/layouts/error-messages.html">
+               ng-messages="vm.Form.mobile.$error" ng-messages-include="app/layouts/error-messages.html">
                <!-- this  message has overridden the template message -->
                   <div class="error" ng-message="minlength">
                       <i class="ion-information-circled"></i>
@@ -91,7 +91,7 @@
               </label>
 
               <div class="error-container" ng-show="vm.Form.address.$dirty && vm.Form.address.$error"
-               ng-messages="vm.Form.address.$error" ng-messages-include="/app/layouts/error-messages.html">
+               ng-messages="vm.Form.address.$error" ng-messages-include="app/layouts/error-messages.html">
              </div>
 
                 <div class="item item-divider">Gender</div>
@@ -102,7 +102,7 @@
               </ion-list>
 
               <div class="error-container" ng-show="vm.Form.gender.$dirty && vm.Form.gender.$error"
-               ng-messages="vm.Form.gender.$error" ng-messages-include="/app/layouts/error-messages.html">
+               ng-messages="vm.Form.gender.$error" ng-messages-include="app/layouts/error-messages.html">
              </div>
 
             </ul>
