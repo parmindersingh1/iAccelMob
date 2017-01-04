@@ -29,7 +29,8 @@
             ]
           },
           controller: 'sideMenuController',
-          controllerAs: 'vm'
+          controllerAs: 'vm',
+          cache: false
         }
       },
       {

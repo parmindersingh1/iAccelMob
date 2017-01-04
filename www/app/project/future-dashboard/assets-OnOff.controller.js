@@ -19,7 +19,6 @@
       assetControllerfactory.getAssetInfo().then(function (response) {
         if (response.status == 200) {
           vm.master = angular.copy(response.data);
-          console.log(response.data)
           if(vm.master.AC1.disabled || vm.master.AC2.disabled || vm.master.AC3.disabled || vm.master.Signage.disabled){
             vm.disableTime = false;
           }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.datiot.iaccel" version="1.5.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>iAccel</name>
-  <description>&#xD;
-        iAccelMobile App.&#xD;
+  <description>&#xD;&#xD;
+        iAccelMobile App.&#xD;&#xD;
     </description>
-  <author email="datiot.pvt.ltd@gmail.com" href="http://datiot.com">&#xD;
-      iAccel&#xD;
+  <author email="datiot.pvt.ltd@gmail.com" href="http://datiot.com">&#xD;&#xD;
+      iAccel&#xD;&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>
