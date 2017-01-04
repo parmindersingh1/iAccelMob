@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="59886b98-4f88-47b7-853d-2bb16cb2864f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/auth/authorization.service.js" afterPath="$PROJECT_DIR$/www/app/auth/authorization.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/auth/forgot.controller.js" afterPath="$PROJECT_DIR$/www/app/auth/forgot.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/auth/login_forgot.html" afterPath="$PROJECT_DIR$/www/app/auth/login_forgot.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.all.controller.js" afterPath="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.all.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.html" afterPath="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/layouts/side-menu.html" afterPath="$PROJECT_DIR$/www/app/layouts/side-menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.controller.js" afterPath="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/widgets/datiot/assetsStatus.html" afterPath="$PROJECT_DIR$/www/app/widgets/datiot/assetsStatus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/widgets/datiot/barGraph.html" afterPath="$PROJECT_DIR$/www/app/widgets/datiot/barGraph.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/widgets/datiot/lineGraph.html" afterPath="$PROJECT_DIR$/www/app/widgets/datiot/lineGraph.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,31 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assetsStatus.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="assetsStatus.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/app/widgets/datiot/assetsStatus.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+            <state relative-caret-position="170">
+              <caret line="10" column="83" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.controller.js">
+      <file leaf-file-name="signin.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/app/auth/signin.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,7 +69,6 @@
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/app/project/project.route.js" />
         <option value="$PROJECT_DIR$/www/app/user/user.route.js" />
-        <option value="$PROJECT_DIR$/www/app/layouts/side-menu.html" />
         <option value="$PROJECT_DIR$/www/data/getDashboard.json" />
         <option value="$PROJECT_DIR$/www/app/user/user-profile.controller.js" />
         <option value="$PROJECT_DIR$/www/app/project/future-dashboard/command.html" />
@@ -92,7 +76,6 @@
         <option value="$PROJECT_DIR$/www/app/env.js" />
         <option value="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.service.js" />
         <option value="$PROJECT_DIR$/www/app/project/future-dashboard/command.controller.js" />
-        <option value="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.controller.js" />
         <option value="$PROJECT_DIR$/www/app/auth/login_login.html" />
         <option value="$PROJECT_DIR$/www/app/auth/validationHelperFactory.js" />
         <option value="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.all.controller.js" />
@@ -104,6 +87,8 @@
         <option value="$PROJECT_DIR$/www/app/widgets/datiot/lineGraph.html" />
         <option value="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.html" />
         <option value="$PROJECT_DIR$/www/app/widgets/datiot/assetsStatus.html" />
+        <option value="$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.controller.js" />
+        <option value="$PROJECT_DIR$/www/app/layouts/side-menu.html" />
       </list>
     </option>
   </component>
@@ -223,95 +208,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iAccelMob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iAccelMob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datiot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iAccelMob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iAccelMob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iAccelMob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iAccelMob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="future-dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iAccelMob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iAccelMob" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gulp-tasks" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,7 +225,7 @@
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="SearchEverywhereHistoryKey" value="env.js&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/app/env.js&#10;env&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/app/env.js&#10;validat&#9;null&#9;null&#10;config&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/config.xml&#10;nav-ti&#9;null&#9;null&#10;index.&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/index.html&#10;index&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/lib/angular-youtube-mb/src/index.html" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/app/widgets/datiot/assetsStatus.html&#10;env.js&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/app/env.js&#10;env&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/app/env.js&#10;validat&#9;null&#9;null&#10;config&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/config.xml&#10;nav-ti&#9;null&#9;null&#10;index.&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/index.html&#10;index&#9;FILE&#9;file://C:/dev/ionic/iaccelMobile/iAccelMob/www/lib/angular-youtube-mb/src/index.html" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -414,7 +311,7 @@
       <workItem from="1482904919277" duration="10883000" />
       <workItem from="1482989826994" duration="21828000" />
       <workItem from="1483423989424" duration="10843000" />
-      <workItem from="1483507016428" duration="14384000" />
+      <workItem from="1483507016428" duration="18163000" />
     </task>
     <task id="LOCAL-00001" summary="in progress">
       <created>1483511346878</created>
@@ -427,7 +324,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91346000" />
+    <option name="totallyTimeSpent" value="95125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -477,20 +374,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ionic.config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/auth/role.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/project/future-dashboard/notification.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -572,13 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/layouts/side-menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -745,14 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/auth/signin.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/auth/forgot.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -833,14 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/env.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-26">
@@ -857,10 +717,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/widgets/datiot/asset.status.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/widgets/datiot/assetsStatus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+        <state relative-caret-position="170">
+          <caret line="10" column="83" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/app/side-menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/layouts/side-menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/project/future-dashboard/dashboard.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="299" column="15" selection-start-line="299" selection-start-column="15" selection-end-line="299" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/auth/signin.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
