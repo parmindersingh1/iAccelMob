@@ -15,11 +15,11 @@
     function signin(form) {
       if(form.$valid) {
         principal.signin(vm.user, vm.password, vm.rememberMe).then(function(){
-          console.log("User logged in successfully");
+          logger.info("User logged in successfully");
           //should we change below statement based on role?
           $state.go('app.dashboard');
         }, function(){
-          console.error("Wrong user credentials");
+          logger.error("Wrong user credentials");
         });
       }
     }
