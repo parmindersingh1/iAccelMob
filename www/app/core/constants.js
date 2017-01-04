@@ -18,6 +18,9 @@
       'SITE_ADMIN': 100,
       'ASSET_GROUP_ADMIN': 10,
       'ASSET_ADMIN': 1
+    })
+    .constant('DASHBOARD_REFRESH_RATE' , {
+      'TIME_INTERVAL' : 30000
     });
 
 })();
