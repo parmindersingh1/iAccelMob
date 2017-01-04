@@ -145,8 +145,8 @@ angular
   }]);
 
   angular
-    .module('app.dashboard').controller('ActiveHourCtrl', ["$scope", "dashboardFactory" ,
-    function($scope , dashboardFactory) {
+    .module('app.dashboard').controller('ActiveHourCtrl', ["$scope", "dashboardFactory" ,"$interval","DASHBOARD_REFRESH_RATE",
+    function($scope , dashboardFactory,$interval, DASHBOARD_REFRESH_RATE) {
 
       var vm = this;
 
@@ -176,8 +176,8 @@ angular
 
 
     angular
-      .module('app.dashboard').controller('TemperatureCtrl', ["$scope", "dashboardFactory" ,
-      function($scope , dashboardFactory ) {
+      .module('app.dashboard').controller('TemperatureCtrl', ["$scope", "dashboardFactory" ,"$interval","DASHBOARD_REFRESH_RATE",
+      function($scope , dashboardFactory,$interval, DASHBOARD_REFRESH_RATE ) {
 
         var vm = this;
         vm.temp = {};
@@ -236,8 +236,8 @@ angular
         }]);
 
         angular
-          .module('app.dashboard').controller('AssetStatusCtrl', ["$scope", "dashboardFactory","logger" ,
-          function($scope , dashboardFactory, logger) {
+          .module('app.dashboard').controller('AssetStatusCtrl', ["$scope", "dashboardFactory","logger" ,"$interval","DASHBOARD_REFRESH_RATE",
+          function($scope , dashboardFactory, logger,$interval, DASHBOARD_REFRESH_RATE) {
 
             var vm = this;
 
@@ -274,8 +274,8 @@ angular
 
 
           angular
-          .module('app.dashboard').controller('AlertsDashboardCtrl', ["$scope", "dashboardFactory","logger" ,
-          function($scope , dashboardFactory, logger) {
+          .module('app.dashboard').controller('AlertsDashboardCtrl', ["$scope", "dashboardFactory","logger" ,"$interval","DASHBOARD_REFRESH_RATE",
+          function($scope , dashboardFactory, logger, $interval, DASHBOARD_REFRESH_RATE) {
 
             var vm = this;
 
