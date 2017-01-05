@@ -63,7 +63,7 @@
           console.error(response);
         }
       });
-      // $state.go('app.command');    
+      // $state.go('app.command');
     }
   }
 })();

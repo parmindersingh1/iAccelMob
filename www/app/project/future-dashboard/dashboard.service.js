@@ -187,6 +187,18 @@
       return promise;
     };
 
+      service.sendAssetInfo = function (data) {
+          var promise = $http.post(__env.dataServerUrl + '/assetStatus/saveAssetStatus/58005c16e855161f7d388cf0' , data)
+              .then(
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
+
 
     return service;
   };
