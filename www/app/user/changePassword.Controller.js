@@ -24,7 +24,7 @@
         return;
       }
       else {
-        console.log(vm.passData);
+        //console.log(vm.passData);
         changePasswordFactory.change(vm.passData).then(function (response) {
 
           if (response.status == 200) {

@@ -12,7 +12,7 @@
     var apiUser = __env.apiUser;
 
     service.change = function (passData) {
-      var promise = $http.post(__env.userServerUrl + '/changePassword',passData)
+      var promise = $http.put(__env.userServerUrl + '/changePassword',passData)
         .then(
 
           function (response) {
