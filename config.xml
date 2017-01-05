@@ -17,6 +17,7 @@
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
   <preference name="LoadUrlTimeoutValue" value="70000"/>
+  <preference name="LoadUrlTimeoutValue" value="70000"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
@@ -80,5 +81,4 @@
   <plugin name="cordova-plugin-fcm" spec="~1.1.5"/>
   <plugin name="cordova-plugin-velda-devicefeedback" spec="~0.0.2"/>
   <engine name="android" spec="~6.0.0"/>
-  <preference name="LoadUrlTimeoutValue" value="70000"/>
 </widget>
