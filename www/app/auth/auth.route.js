@@ -32,8 +32,10 @@
       {
         state: 'auth.signout',
         config: {
+          templateUrl: 'app/auth/auth.html',
           controller: 'SignoutController',
-          controllerAs: 'vm'
+          controllerAs: 'vm',
+          cache: false
         }
       },
       {
