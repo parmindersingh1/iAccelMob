@@ -40,7 +40,7 @@
               <label class="item item-input item-floating-label" ng-class="{ 'has-errors' : vm.Form.firstName.$dirty && vm.Form.firstName.$invalid, 'no-errors' : vm.Form.firstName.$dirty && vm.Form.firstName.$valid}">
                 <span class="input-label">First Name</span>
                 <input type="text" placeholder="Enter your First Name"  name="firstName"
-                       ng-model="vm.user.firstname" required>
+                       ng-model="vm.user.firstname" ng-pattern="/^[a-zA-Z\s]*$/" required>
               </label>
 
               <div class="error-container" ng-show="vm.Form.firstName.$dirty && vm.Form.firstName.$error"
@@ -50,7 +50,7 @@
               <label class="item item-input item-floating-label" ng-class="{ 'has-errors' : vm.Form.lastName.$dirty && vm.Form.lastName.$invalid, 'no-errors' : vm.Form.lastName.$dirty && vm.Form.lastName.$valid}">
                 <span class="input-label">Last Name</span>
                 <input type="text" placeholder="Enter your Last Name"  name="lastName"
-                       ng-model="vm.user.lastname" required>
+                       ng-model="vm.user.lastname" ng-pattern="/^[a-zA-Z\s]*$/" required>
               </label>
 
               <div class="error-container" ng-show="vm.Form.lastName.$dirty && vm.Form.lastName.$error"
@@ -60,7 +60,7 @@
               <label class="item item-input item-floating-label" ng-class="{ 'has-errors' : vm.Form.email.$dirty && vm.Form.email.$invalid, 'no-errors' : vm.Form.email.$dirty && vm.Form.email.$valid}">
                 <span class="input-label">Email</span>
                 <input type="email" placeholder="Enter a valid E-mail"  ng-readonly="true" name="email"
-                       ng-model="vm.user.email" required>
+                       ng-model="vm.user.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"  required>
               </label>
 
               <div class="error-container" ng-show="vm.Form.email.$dirty && vm.Form.email.$error"

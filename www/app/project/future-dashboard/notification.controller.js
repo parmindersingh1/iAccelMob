@@ -25,6 +25,13 @@
 
     }
     activate();
+        var myInterval = $interval(function () {
+            vm.activate();
+        }, DASHBOARD_REFRESH_RATE.TIME_INTERVAL);
+
+        $scope.$on('$destroy', function(){
+            $interval.cancel(myInterval)
+        });
 
 }
 
