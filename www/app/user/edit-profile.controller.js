@@ -5,9 +5,9 @@
     .module('app.user')
     .controller('EditProfileController', EditProfileController);
 
-  EditProfileController.$inject = ['$q', 'userProfileFactory', '$state', '$http', 'logger', 'validationHelperFactory','$stateParams', '$localStorage', '$cordovaCamera', '$ionicLoading' ];
+  EditProfileController.$inject = ['$q', 'userProfileFactory', '$state', '$http', 'logger', 'validationHelperFactory','$stateParams', '$localStorage', '$cordovaCamera', '$ionicLoading', '$ionicHistory' ];
 
-  function EditProfileController($q, userProfileFactory, $state, $http, logger, validationHelperFactory, $stateParams, $localStorage, $cordovaCamera, $ionicLoading) {
+  function EditProfileController($q, userProfileFactory, $state, $http, logger, validationHelperFactory, $stateParams, $localStorage, $cordovaCamera, $ionicLoading, $ionicHistory) {
     var vm = this;
 
     // vm.imgURI = "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg";
@@ -130,6 +130,13 @@
 
         }
       };
+
+      vm.onCancel = function() {
+        $ionicHistory.nextViewOptions({
+            disableBack: true
+        });
+        $state.go("app.dashboard");
+      }
 
   }
 }());
