@@ -5,9 +5,9 @@
     .module('app.dashboard')
     .controller('ControlAsset', ControlAsset);
 
-  ControlAsset.$inject = ['assetControllerfactory', '$state', 'logger', '$http', 'validationHelperFactory', '$localStorage', '__env', '$scope'];
+  ControlAsset.$inject = ['$scope', '$ionicLoading','assetControllerfactory', '$state', 'logger', '$http', 'validationHelperFactory', '$localStorage', '__env', '$ionicHistory'];
   /* @ngInject */
-  function ControlAsset(assetControllerfactory, $state, logger, $http, validationHelperFactory, $localStorage, __env, $scope) {
+  function ControlAsset($scope, $ionicLoading, assetControllerfactory, $state, logger, $http, validationHelperFactory, $localStorage, __env, $ionicHistory) {
     var vm = this;
     vm.temp = {};
     vm.title = "command";
@@ -18,37 +18,25 @@
 
       assetControllerfactory.getAssetInfo().then(function (response) {
         if (response.status == 200) {
-          vm.master = angular.copy(response.data);
-          if(vm.master.AC1.disabled || vm.master.AC2.disabled || vm.master.AC3.disabled || vm.master.Signage.disabled){
-            vm.disableTime = false;
-          }
-          if(vm.master.AC1.status == 1.00){
-            vm.master.AC1.status = true;
-          }
-          else{
-            vm.master.AC1.status = false;
-          }
-          if(vm.master.AC2.status == 1.00){
-            vm.master.AC2.status = true;
-          }
-          else{
-            vm.master.AC2.status = false;
-          }
-          if(vm.master.AC3.status == 1.00){
-            vm.master.AC3.status = true;
-          }
-          else{
-            vm.master.AC3.status = false;
-          }
-          if(vm.master.Signage.status == 1.00){
-            vm.master.Signage.status = true;
-          }
-          else{
-            vm.master.Signage.status = false;
-          }
-          console.log(vm.master)
-          vm.control = angular.copy(vm.master);
+          if (response.data != null) {
+            vm.master = angular.copy(response.data);
 
+            for (var index=0 ; index<vm.master.length ; index++){
+
+              if(vm.master[index].disabled) {
+                vm.disableTime = false;
+              }
+
+              if (vm.master[index].status == 1.00) {
+                vm.master[index].status = true;
+              }
+              else {
+                vm.master[index].status = false;
+              }
+            }
+
+            vm.control = angular.copy(vm.master);
+          }
         }
         else if (response.status == 404) {
           logger.error('User not found', 'error');
@@ -65,6 +53,43 @@
       });
       // $state.go('app.command');
     }
+
+    vm.saveController = function () {
+      console.log(vm.control)
+      vm.temp = {};
+      for (var index=0 ; index<vm.control.length ; index++) {
+        vm.temp[vm.control[index].assetName] = {};
+        vm.temp[vm.control[index].assetName] = vm.control[index];
+      }
+      console.log(vm.temp);
+      assetControllerfactory.sendAssetInfo(vm.temp).then(function (response) {
+        if (response.status == 200) {
+          console.log(response.data);
+          logger.info('Asset Status Changed', 'default');
+          vm.disableTime = false;
+        }
+        else if (response.status == -1) {
+          logger.error('Network Error', 'error');
+          console.error(response);
+        }
+        else if (response.status == 400) {
+          logger.error(response.data.errors[0].message, 'error');
+          console.error(response);
+        }
+        else {
+          logger.error('Some problem', 'error');
+          console.error(response);
+        }
+      });
+    };
+
+    vm.onCancel = function() {
+      $ionicHistory.nextViewOptions({
+        disableBack: true
+      });
+      $state.go("app.dashboard");
+    }
+
   }
 })();
 

@@ -5,9 +5,9 @@
         .module('app.dashboard')
         .controller('NotificationController', NotificationController);
 
-    NotificationController.$inject = ['$scope', '$q', 'logger', 'dashboardFactory'];
+    NotificationController.$inject = ['$scope', '$q', 'logger', 'dashboardFactory', '$interval','DASHBOARD_REFRESH_RATE'];
     /* @ngInject */
-    function NotificationController($scope, $q, logger, dashboardFactory) {
+    function NotificationController($scope, $q, logger, dashboardFactory, $interval, DASHBOARD_REFRESH_RATE) {
         var vm = this;
         vm.activate = activate;
 

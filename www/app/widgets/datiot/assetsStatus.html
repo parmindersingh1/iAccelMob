@@ -1,27 +1,33 @@
 <div class="card item">
-  <div class="padding-vertical">
+    <div class="padding-vertical">
     <h2 class="title text-bold padding">
-        AC Status </h2><hr>
-        <div class = "row padding-vertical-10">
-           <div class = "col align-middle text-center">Asset</div>
-           <div class = "col align-middle text-center text-bold">Status</div>
-           <div class = "col align-middle text-center text-bold">Energy Consumption</div>
-        </div>
+    Asset Status </h2><hr>
+<div class="row">
+    <div class="col col-33">Asset</div>
+    <div class="col col-20">Status</div>
+    <div class="col col-33">Energy Consumed</div>
+</div>
+        <div class = "row" ng-repeat="row in assetStatus.data">
+            <div class = "col col-33 ">
+                <span class="text-small block text-light">{{row.assetName}}</span>
+            </div>
+            <div class = "col col-20">
 
-        <div class = "row padding-vertical-10" ng-repeat="row in assetStatus.data">
-           <div class = "col align-middle text-center">
-             <span class="text-small block text-light">{{row.assetName}}</span>
-           </div>
-           <div class = "col align-middle">
-             <span class="text-center">
                <span  ng-if="row.status == 'OFF'" class="label partition-orange text-small">{{row.status}}</span>
                <span ng-if="row.status == 'ON'" class="label partition-green text-small">{{row.status}}</span>
-             </span>
-           </div>
-           <div class = "col align-middle text-center">{{row.energyConsumed}}</div>
-         </div>
+
+            </div>
+            <div class = "col col-33" style="text-align:center;">{{row.energyConsumed}}</div>
+        </div>
+
+        </div>
+    </div>
 
 
 
-   </div>
- </div>
+
+
+
+
+
+
