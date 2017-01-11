@@ -14,9 +14,9 @@
     function activate() {
 
     	 dashboardFactory.getAlertData().then(function (response) {
-                if(response.data != null) {
+                if(response.data != null && response.data[0]!=undefined) {
                   vm.data = response.data;
-                  console.log(response.data)
+                  //console.log(response.data)
                 }
               })
                 .catch(function (error) {
