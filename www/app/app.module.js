@@ -17,7 +17,7 @@ angular.module('app', [
   'app.directives'
 ])
 
-.run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout) {
+.run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout, $ionicPopup, $ionicHistory) {
 
   $ionicPlatform.on("deviceready", function(){
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -70,6 +70,37 @@ angular.module('app', [
     version: '0.0', // current version
     year: ((new Date()).getFullYear())
   }; 
+
+  $ionicPlatform.registerBackButtonAction(function(e) {
+     e.preventDefault();
+     function showConfirm() {
+      var confirmPopup = $ionicPopup.show({
+       title : 'Exit iAccel?',
+       template : 'Are you sure you want to exit iAccel?',
+       buttons : [{
+        text : 'Cancel',
+        type : 'button-royal button-outline',
+       }, {
+        text : 'Ok',
+        type : 'button-royal',
+        onTap : function() {
+         ionic.Platform.exitApp();
+        }
+       }]
+      });
+     };
+
+     // Is there a page to go back to?
+     if ($ionicHistory.backView()) {
+      // Go back in history
+      $ionicHistory.backView().go();
+     } else {
+      // This is the last page: Show confirmation popup
+      showConfirm();
+     }
+
+     return false;
+    }, 101);
 
 });
 
