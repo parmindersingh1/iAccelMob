@@ -2,9 +2,10 @@
     <ion-nav-title>
         <span><b>All Controls</b></span>
     </ion-nav-title>
-
-    <ion-content>
+    <ion-spinner ng-show="vm.progress" icon="spiral"></ion-spinner>
+    <ion-content ng-show="!vm.progress"  >
 <div>
+
         <ion-toggle ng-repeat="row in vm.control" ng-if="vm.disableTime"
                     {{row.assetName}}
                     ng-model="row.status"

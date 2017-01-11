@@ -11,12 +11,14 @@
     var vm = this;
     vm.temp = {};
     vm.title = "command";
+    vm.progress = true;
     activate();
 
     function activate() {
        vm.disableTime = true;
 
       assetControllerfactory.getAssetInfo().then(function (response) {
+        vm.progress = false;
         if (response.status == 200) {
           if (response.data != null) {
             vm.master = angular.copy(response.data);
