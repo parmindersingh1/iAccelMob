@@ -880,3 +880,16 @@ dt-box-header, dt-bar-graph, dt-wave-graph, dt-expenses-graph, dt-real-time-knob
   color: #fff !important;
   padding: 0 2px !important;
 }
+/* ion spinner css */
+
+div.spinner {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  height: 65px;
+  text-align: center;
+}
+.spinner svg {
+  width: 15% !important;
+  height: 65px !important;
+}

@@ -2,7 +2,9 @@
     <ion-nav-title>
         <span><b>All Controls</b></span>
     </ion-nav-title>
-    <ion-spinner ng-show="vm.progress" icon="spiral"></ion-spinner>
+      <div class="spinner" ng-show="vm.progress">
+        <ion-spinner icon="android"></ion-spinner>
+      </div>
     <ion-content ng-show="!vm.progress"  >
 <div>
 
