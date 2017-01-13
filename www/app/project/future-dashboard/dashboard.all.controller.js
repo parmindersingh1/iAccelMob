@@ -12,6 +12,7 @@
     vm.dashboard = {};
     vm.dashboardData = {};
     vm.title = 'Client Dashboard';
+    vm.progress = true;
 
 
     activate();
@@ -21,6 +22,7 @@
       var promises = [getDashboard(), getDashboardData(), getData(), getDashboardSites()];
       return $q.all(promises).then(function () {
          dashboardFactory.allSiteData().then(function (response) {
+           vm.progress = false;
           console.log(response.data);
           vm.pnpsite = response.data;
         });
@@ -32,6 +34,7 @@
     function getData() {
       return dashboardFactory.getData()
           .then(function (response) {
+            //vm.progress = false;
             if(response.data != null){
               vm.boxData = response.data.dashboardData.item;
               vm.BarGraphData = response.data.barGraphData;
@@ -47,6 +50,7 @@
 
     function getDashboard() {
       return dashboardFactory.getDashboard().then(function (response) {
+       // vm.progress = false;
         if(response.data != null){
           console.log(response.data.title);
           vm.dashboard = response.data;
@@ -58,6 +62,7 @@
 
     function getDashboardData() {
       return dashboardFactory.getDashboardData().then(function (response) {
+        //vm.progress = false;
         //console.log(response.data);
         vm.dashboardData = response.data;
         return vm.dashboardData;
@@ -67,6 +72,7 @@
     function getDashboardSites() {
       vm.markers = [];
       return dashboardFactory.getDashboardSites().then(function (response) {
+        //vm.progress = false;
         if (response.data != null){
           var data = response.data;
           vm.markers = data.markers;

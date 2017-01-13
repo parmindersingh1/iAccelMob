@@ -5,9 +5,9 @@
     .module('app.dashboard')
     .controller('ControlAsset', ControlAsset);
 
-  ControlAsset.$inject = ['$scope', '$ionicLoading','assetControllerfactory', '$state', 'logger', '$http', 'validationHelperFactory', '$localStorage', '__env', '$ionicHistory'];
+  ControlAsset.$inject = ['$scope','assetControllerfactory', '$state', 'logger', '$http', 'validationHelperFactory', '$localStorage', '__env', '$ionicHistory','$interval', 'DASHBOARD_REFRESH_RATE'];
   /* @ngInject */
-  function ControlAsset($scope, $ionicLoading, assetControllerfactory, $state, logger, $http, validationHelperFactory, $localStorage, __env, $ionicHistory) {
+  function ControlAsset($scope, assetControllerfactory, $state, logger, $http, validationHelperFactory, $localStorage, __env, $ionicHistory, $interval, DASHBOARD_REFRESH_RATE) {
     var vm = this;
     vm.temp = {};
     vm.title = "command";
@@ -54,6 +54,7 @@
         }
       });
       // $state.go('app.command');
+
     }
 
     vm.saveController = function () {
@@ -67,6 +68,7 @@
       assetControllerfactory.sendAssetInfo(vm.temp).then(function (response) {
         if (response.status == 200) {
           console.log(response.data);
+          $state.go("app.dashboard");
           logger.info('Asset Status Changed', 'default');
           vm.disableTime = false;
         }

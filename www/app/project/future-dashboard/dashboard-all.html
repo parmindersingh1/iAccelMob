@@ -2,8 +2,10 @@
 <ion-nav-title>
   <span>All Sites</span>
 </ion-nav-title>
-
-  <ion-content>
+    <div class="spinner" ng-show="vm.progress">
+        <ion-spinner icon="android"></ion-spinner>
+    </div>
+  <ion-content ng-show="!vm.progress">
 <div>
   <div class="row">
     <div class="col col-50">

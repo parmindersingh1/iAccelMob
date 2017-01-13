@@ -8,7 +8,11 @@
   <ion-nav-title>
     <span>{{vm.title}}</span>
   </ion-nav-title>
-  <ion-content>
+
+    <div class="spinner" ng-show="vm.progress">
+        <ion-spinner icon="android"></ion-spinner>
+    </div>
+    <ion-content ng-show="!vm.progress">
 
   <div ng-controller="ConsumptionCtrl as mains">
 

@@ -14,6 +14,7 @@
     vm.title = 'Site Dashboard';
     vm.subTitle = "Dwarka, New Delhi, Easyday";
     vm.siteLocation = '';
+    vm.progress = true;
 
 
     activate();
@@ -22,6 +23,7 @@
 
       var promises = [getDashboard(), getDashboardData(), getData(), getDashboardSites()];
       return $q.all(promises).then(function () {
+        vm.progress = false;
         // logger.info('Activated Dashboard View');
       });
 
@@ -152,6 +154,7 @@ angular
 
       vm.activate = function (){
         dashboardFactory.getActiveHourData().then(function (response) {
+          vm.progress = false;
           if(response.data != null) {
             vm.data = response.data;
           }
