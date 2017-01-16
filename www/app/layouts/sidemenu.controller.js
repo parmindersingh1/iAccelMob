@@ -5,12 +5,12 @@
     .module('app.layout')
     .controller('sideMenuController', sideMenuController);
 
-  sideMenuController.$inject = ['$q', 'userProfileFactory', '$localStorage', 'role', 'ACCESS_LEVEL'];
+  sideMenuController.$inject = ['$scope','$q', 'userProfileFactory', '$localStorage', 'role', 'ACCESS_LEVEL', '$ionicSideMenuDelegate'];
 
   /* @ngInject */
 
 
-  function sideMenuController($q, userProfileFactory, $localStorage, role, ACCESS_LEVEL) {
+  function sideMenuController($scope,$q, userProfileFactory, $localStorage, role, ACCESS_LEVEL, $ionicSideMenuDelegate) {
     var vm = this;
 
     vm.user = $localStorage._identity.userDetails;
@@ -22,6 +22,16 @@
     vm.ACCESS_LEVEL = ACCESS_LEVEL;
     console.log("vm.ACCESS_LEVEL is",role.isAdminRole());
 
+
+    $scope.$watch(function () {
+      return $ionicSideMenuDelegate.isOpenLeft();
+    },
+       function (isOpen) {
+      if (isOpen){
+        vm.user = $localStorage._identity.userDetails;
+      }
+
+    });
   // for multivel side menu
     // vm.group = {};
     // vm.group.admin = 'admin';
