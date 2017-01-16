@@ -22,9 +22,12 @@
     function activate(id) {
       userProfileFactory.alluser(id).then(function (response) {
           if (response.status == 200) {
+
             vm.master = response.data;
+
               console.log(response.data)
             vm.user = angular.copy(vm.master);
+
           }
           else if (response.status == 404) {
             console.error('User not found', 'error');
