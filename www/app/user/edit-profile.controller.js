@@ -5,9 +5,9 @@
     .module('app.user')
     .controller('EditProfileController', EditProfileController);
 
-  EditProfileController.$inject = ['$q', 'userProfileFactory', '$state', '$http', 'logger', 'validationHelperFactory','$stateParams', '$localStorage', '$cordovaCamera', '$ionicLoading', '$ionicHistory' ];
+  EditProfileController.$inject = ['$q', 'userProfileFactory', '$state', '$http', 'logger', 'validationHelperFactory','$stateParams', '$localStorage', '$cordovaCamera', '$ionicLoading', '$ionicHistory', '$rootScope'];
 
-  function EditProfileController($q, userProfileFactory, $state, $http, logger, validationHelperFactory, $stateParams, $localStorage, $cordovaCamera, $ionicLoading, $ionicHistory) {
+  function EditProfileController($q, userProfileFactory, $state, $http, logger, validationHelperFactory, $stateParams, $localStorage, $cordovaCamera, $ionicLoading, $ionicHistory , $rootScope) {
     var vm = this;
 
     // vm.imgURI = "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg";
@@ -110,6 +110,7 @@
         else {
           userProfileFactory.edit(vm.user).then(function (response) {
             if (response.status == 200) {
+                $rootScope.$broadcast('reload','asd');
               logger.info('Profile Updated', 'default');
               $localStorage._identity.userDetails = response.data;
               $state.go('app.dashboard');
