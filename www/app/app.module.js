@@ -17,7 +17,7 @@ angular.module('app', [
   'app.directives'
 ])
 
-.run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout, $ionicPopup, $ionicHistory) {
+.run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout, $ionicPopup, $ionicHistory, $state, $location) {
 
   $ionicPlatform.on("deviceready", function(){
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -91,12 +91,23 @@ angular.module('app', [
      };
 
      // Is there a page to go back to?
-     if ($ionicHistory.backView()) {
+     if ($ionicHistory.backView()) {      
       // Go back in history
       $ionicHistory.backView().go();
      } else {
       // This is the last page: Show confirmation popup
-      showConfirm();
+      console.log('path is '+$location.path());
+        if ($location.path() === "/app/dashboard" || $location.path() === "app/dashboard" || _.includes($location.path(), 'auth')) {
+           showConfirm();
+        } else {
+          $ionicHistory.clearHistory();
+          $ionicHistory.clearCache();
+          $ionicHistory.nextViewOptions({
+              disableBack: true
+          });
+          $state.go('app.dashboard');
+        }
+      
      }
 
      return false;
