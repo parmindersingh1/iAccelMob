@@ -5,12 +5,29 @@
     .module('app.auth')
     .controller('SigninController', SigninController);
 
-  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', "__env"];
+  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , '$cordovaNetwork'];
   /* @ngInject */
-  function SigninController($scope, logger, $state, principal,  __env) {
+  function SigninController($scope, logger, $state, principal,  __env , $cordovaNetwork) {
     var vm = this;
 
     vm.signin = signin;
+    function checkConnection() {
+      var networkState = navigator.connection.type;
+
+      var states = {};
+      states[Connection.UNKNOWN]  = 'Unknown connection';
+      states[Connection.ETHERNET] = 'Ethernet connection';
+      states[Connection.WIFI]     = 'WiFi connection';
+      states[Connection.CELL_2G]  = 'Cell 2G connection';
+      states[Connection.CELL_3G]  = 'Cell 3G connection';
+      states[Connection.CELL_4G]  = 'Cell 4G connection';
+      states[Connection.CELL]     = 'Cell generic connection';
+      states[Connection.NONE]     = 'No network connection';
+
+      console.log('Connection type: ' + states[networkState]);
+    }
+
+    checkConnection();
 
     function signin(form) {
       if(form.$valid) {

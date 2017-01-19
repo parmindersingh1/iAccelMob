@@ -110,7 +110,6 @@
         else {
           userProfileFactory.edit(vm.user).then(function (response) {
             if (response.status == 200) {
-                $rootScope.$broadcast('reload','asd');
               logger.info('Profile Updated', 'default');
               $localStorage._identity.userDetails = response.data;
               $state.go('app.dashboard');

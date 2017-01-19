@@ -59,6 +59,7 @@ angular.module('app', [
     }
   });
 
+
   $ionicPlatform.on("resume", function(){
       // PushNotificationsService.register();
   });
@@ -69,8 +70,26 @@ angular.module('app', [
     description: 'Mobile App for iAccel IoT platform', // brief description
     version: '0.0', // current version
     year: ((new Date()).getFullYear())
-  }; 
+  };
 
+    // $ionicPlatform.ready(function() {
+    //
+    //     // Check for network connection
+    //     if(window.Connection) {
+    //         if(navigator.connection.type == Connection.NONE) {
+    //             $ionicPopup.confirm({
+    //                 title: 'No Internet Connection',
+    //                 content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
+    //             })
+    //                 .then(function(result) {
+    //                     if(!result) {
+    //                         ionic.Platform.exitApp();
+    //                     }
+    //                 });
+    //         }
+    //     }
+    //
+    // });
   $ionicPlatform.registerBackButtonAction(function(e) {
      e.preventDefault();
      function showConfirm() {
