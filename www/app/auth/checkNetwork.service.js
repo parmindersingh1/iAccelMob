@@ -3,28 +3,52 @@
     angular
         .module('app')
         .factory('checkNetworkFactory', checkNetworkFactory);
-    checkNetworkFactory.$inject = ['$cordovaNetwork'];
+    checkNetworkFactory.$inject = ['$cordovaNetwork' , '$ionicPlatform', '$q'];
 
-    function checkNetworkFactory($cordovaNetwork) {
+    function checkNetworkFactory($cordovaNetwork ,$ionicPlatform , $q) {
 
-        var service = {};
+        var Connection = window.Connection || {
+                "CELL": "cellular",
+                "CELL_2G": "2g",
+                "CELL_3G": "3g",
+                "CELL_4G": "4g",
+                "ETHERNET": "ethernet",
+                "NONE": "none",
+                "UNKNOWN": "unknown",
+                "WIFI": "wifi"
+            };
 
-        service.connectionType = function (){
-            var networkState = navigator.connection.type;
-
-            var states = {};
-            states[Connection.UNKNOWN] = 'Unknown connection';
-            states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI] = 'WiFi connection';
-            states[Connection.CELL_2G] = 'Cell 2G connection';
-            states[Connection.CELL_3G] = 'Cell 3G connection';
-            states[Connection.CELL_4G] = 'Cell 4G connection';
-            states[Connection.CELL] = 'Cell generic connection';
-            states[Connection.NONE] = 'No network connection';
-
-            console.log('Connection type: ' + states[networkState]);
+        var asyncGetConnection = function () {
+            var q = $q.defer();
+            $ionicPlatform.ready(function () {
+                if (navigator.connection) {
+                    q.resolve(navigator.connection);
+                } else {
+                    q.reject('navigator.connection is not defined');
+                }
+            });
+            return q.promise;
         };
-        return service;
+
+        return {
+            isOnline: function () {
+                return asyncGetConnection().then(function (networkConnection) {
+                    var isConnected = false;
+
+                    switch (networkConnection.type) {
+                        case Connection.ETHERNET:
+                        case Connection.WIFI:
+                        case Connection.CELL_2G:
+                        case Connection.CELL_3G:
+                        case Connection.CELL_4G:
+                        case Connection.CELL:
+                            isConnected = true;
+                            break;
+                    }
+                    return isConnected;
+                });
+            }
+        };
     }
 
 })();

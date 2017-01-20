@@ -5,29 +5,32 @@
     .module('app.auth')
     .controller('SigninController', SigninController);
 
-  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , '$cordovaNetwork'];
+  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , '$cordovaNetwork' , 'checkNetworkFactory','$ionicPopup'];
   /* @ngInject */
-  function SigninController($scope, logger, $state, principal,  __env , $cordovaNetwork) {
+  function SigninController($scope, logger, $state, principal,  __env , $cordovaNetwork , checkNetworkFactory, $ionicPopup) {
     var vm = this;
 
-    vm.signin = signin;
-    function checkConnection() {
-      var networkState = navigator.connection.type;
+    checkNetworkFactory.isOnline().then(function(isConnected) {
+      if(isConnected){
 
-      var states = {};
-      states[Connection.UNKNOWN]  = 'Unknown connection';
-      states[Connection.ETHERNET] = 'Ethernet connection';
-      states[Connection.WIFI]     = 'WiFi connection';
-      states[Connection.CELL_2G]  = 'Cell 2G connection';
-      states[Connection.CELL_3G]  = 'Cell 3G connection';
-      states[Connection.CELL_4G]  = 'Cell 4G connection';
-      states[Connection.CELL]     = 'Cell generic connection';
-      states[Connection.NONE]     = 'No network connection';
-
-      console.log('Connection type: ' + states[networkState]);
-    }
-
-    checkConnection();
+      }else {
+        //logger.error("No Internet Connection")
+        $ionicPopup.show({
+          title : 'No Internet',
+          template : 'App is unable to connect to our system. Please check your WIFI or network connectivity',
+          buttons : [
+            {
+            text : 'Exit',
+            type : 'button-assertive',
+            onTap : function() {
+              ionic.Platform.exitApp();
+            }
+          }]
+        });
+      }
+    }).catch(function(err){
+      alert(err);
+    });
 
     function signin(form) {
       if(form.$valid) {
