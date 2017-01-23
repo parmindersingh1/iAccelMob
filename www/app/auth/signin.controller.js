@@ -9,6 +9,7 @@
   /* @ngInject */
   function SigninController($scope, logger, $state, principal,  __env , $cordovaNetwork , checkNetworkFactory, $ionicPopup) {
     var vm = this;
+    vm.signin = signin;
 
     checkNetworkFactory.isOnline().then(function(isConnected) {
       if(isConnected){
