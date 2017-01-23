@@ -9,6 +9,7 @@
   /* @ngInject */
   function SigninController($scope, logger, $state, principal,  __env , ConnectivityMonitor , $ionicPopup) {
     var vm = this;
+    vm.signin = signin;
 
     
     if(!ConnectivityMonitor.isOnline()){      
