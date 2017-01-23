@@ -5,15 +5,13 @@
     .module('app.auth')
     .controller('SigninController', SigninController);
 
-  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , '$cordovaNetwork' , 'checkNetworkFactory','$ionicPopup'];
+  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , 'ConnectivityMonitor' ,'$ionicPopup'];
   /* @ngInject */
-  function SigninController($scope, logger, $state, principal,  __env , $cordovaNetwork , checkNetworkFactory, $ionicPopup) {
+  function SigninController($scope, logger, $state, principal,  __env , ConnectivityMonitor , $ionicPopup) {
     var vm = this;
 
-    checkNetworkFactory.isOnline().then(function(isConnected) {
-      if(isConnected){
-
-      }else {
+    
+    if(!ConnectivityMonitor.isOnline()){      
         //logger.error("No Internet Connection")
         $ionicPopup.show({
           title : 'No Internet',
@@ -26,11 +24,8 @@
               ionic.Platform.exitApp();
             }
           }]
-        });
-      }
-    }).catch(function(err){
-      alert(err);
-    });
+        });      
+    };
 
     function signin(form) {
       if(form.$valid) {

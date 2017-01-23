@@ -17,7 +17,7 @@ angular.module('app', [
   'app.directives'
 ])
 
-.run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout, $ionicPopup, $ionicHistory, $state, $location) {
+.run(function($ionicPlatform, PushNotificationsService, $rootScope, $ionicConfig, $timeout, $ionicPopup, $ionicHistory, $state, $location, ConnectivityMonitor) {
 
   $ionicPlatform.on("deviceready", function(){
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -31,6 +31,7 @@ angular.module('app', [
     if(ionic.Platform.isAndroid())
       PushNotificationsService.register();
 
+    ConnectivityMonitor.startWatching();
   });
 
   // This fixes transitions for transparent background views
