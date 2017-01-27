@@ -9,7 +9,7 @@
   return {
     isOnline: function(){
       if(ionic.Platform.isWebView()){
-        return $cordovaNetwork.isOnline();    
+        return $cordovaNetwork.isOnline();
       } else {
         return navigator.onLine;
       }

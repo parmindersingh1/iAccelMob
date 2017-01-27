@@ -9,6 +9,7 @@
 
   function EditProfileController($q, userProfileFactory, $state, $http, logger, validationHelperFactory, $stateParams, $localStorage, $cordovaCamera, $ionicLoading, $ionicHistory , $rootScope) {
     var vm = this;
+      vm.progress = true;
 
     // vm.imgURI = "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg";
 
@@ -19,6 +20,7 @@
 
     function activate(id) {
       userProfileFactory.alluser(id).then(function (response) {
+          vm.progress = false;
           if (response.status == 200) {
             vm.master = response.data;
             vm.user = angular.copy(vm.master);
@@ -109,6 +111,7 @@
         }
         else {
           userProfileFactory.edit(vm.user).then(function (response) {
+              vm.progress = false;
             if (response.status == 200) {
               logger.info('Profile Updated', 'default');
               $localStorage._identity.userDetails = response.data;

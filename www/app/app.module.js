@@ -99,9 +99,9 @@ angular.module('app', [
        template : 'Are you sure you want to exit iAccel?',
        buttons : [{
         text : 'Cancel',
-        type : ' button-assertive button-outline',
+        type : ' button-assertive',
        }, {
-        text : 'Ok',
+        text : 'OK',
         type : 'button-positive',
         onTap : function() {
          ionic.Platform.exitApp();

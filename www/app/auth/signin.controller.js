@@ -5,28 +5,29 @@
     .module('app.auth')
     .controller('SigninController', SigninController);
 
-  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , 'ConnectivityMonitor' ,'$ionicPopup'];
+  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , 'ConnectivityMonitor' ,'$ionicPopup', '$ionicPlatform'];
   /* @ngInject */
-  function SigninController($scope, logger, $state, principal,  __env , ConnectivityMonitor , $ionicPopup) {
+  function SigninController($scope, logger, $state, principal,  __env , ConnectivityMonitor , $ionicPopup, $ionicPlatform) {
     var vm = this;
     vm.signin = signin;
 
-    
-    if(!ConnectivityMonitor.isOnline()){      
+    $ionicPlatform.ready(function() {
+      if (!ConnectivityMonitor.isOnline()) {
         //logger.error("No Internet Connection")
         $ionicPopup.show({
-          title : 'No Internet',
-          template : 'App is unable to connect to our system. Please check your WIFI or network connectivity',
-          buttons : [
+          title: 'No Internet',
+          template: 'App is unable to connect to our system. Please check your WIFI or network connectivity',
+          buttons: [
             {
-            text : 'Exit',
-            type : 'button-assertive',
-            onTap : function() {
-              ionic.Platform.exitApp();
-            }
-          }]
-        });      
-    };
+              text: 'Exit',
+              type: 'button-assertive',
+              onTap: function () {
+                ionic.Platform.exitApp();
+              }
+            }]
+        });
+      }
+    });
 
     function signin(form) {
       if(form.$valid) {
