@@ -36,7 +36,7 @@
       {
         state: 'app.dashboard',
         config: {
-          url: '/dashboard',
+          url: ':id/dashboard',
           views: {
             'menuContent': {
                 templateUrl: 'app/project/future-dashboard/dashboard.html',

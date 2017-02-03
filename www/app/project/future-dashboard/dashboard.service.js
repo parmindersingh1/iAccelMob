@@ -8,7 +8,18 @@
   function dashboardFactory($http, __env) {
     var service = {};
 
-  
+      service.get = function (id) { // TODO below need to be changed
+          var promise = $http.get(__env.refDataUrl + "/sites/" + id)
+              .then(
+
+                  function (response) {
+                      return response;
+                  },
+                  function (response) {
+                      return response;
+                  });
+          return promise;
+      };
       service.getMainsData = function () { // TODO below need to be changed
           var promise = $http.get(__env.dataServerUrl + '/dashboard/mainConsumption?siteId=58005c16e855161f7d388cf0')
               .then(
@@ -164,7 +175,7 @@
     };
 
      service.allSiteData = function(id) {
-      var promise = $http.get(__env.dataServerUrl + '/dashboard/currentActive?siteId=58005c16e855161f7d388cf0')
+      var promise = $http.get(__env.dataServerUrl + '/dashboard/currentActive/activeSites')
         .then(
           function (response) {
             return response;

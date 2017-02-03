@@ -5,18 +5,23 @@
     .module('app.dashboard')
     .controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['$scope', '$q', 'logger', 'dashboardFactory'];
+  DashboardController.$inject = ['$scope', '$q', 'logger', 'dashboardFactory','$stateParams'];
   /* @ngInject */
-  function DashboardController($scope, $q, logger, dashboardFactory ) {
+  function DashboardController($scope, $q, logger, dashboardFactory,$stateParams) {
     var vm = this;
     vm.dashboard = {};
     vm.dashboardData = {};
-    vm.title = 'Site Dashboard';
-    vm.subTitle = "Dwarka, New Delhi, Easyday";
     vm.siteLocation = '';
     vm.progress = true;
+    dashboardFactory.get($stateParams.id).then(function (response) {
+      vm.title = response.data.name;
+    });
 
-
+    dashboardFactory.get($stateParams.id).then(function (response) {
+      vm.subTitle = response.data.address;
+      vm.mapLatitude = response.data.lattitude;
+      vm.mapLongitude = response.data.longitude;
+    });
     activate();
 
     function activate() {
@@ -28,12 +33,6 @@
       });
 
 
-
-
-      // var promises = [getMessageCount(), getPeople()];
-      // return $q.all(promises).then(function() {
-      //   //logger.info('Activated Dashboard View');
-      // });
 
     }
 
@@ -286,6 +285,7 @@ angular
               dashboardFactory.getAlertData().then(function (response) {
                 if(response.data != null) {
                   vm.data = response.data;
+                  //console.log(response.data)
                 }
               })
                 .catch(function (error) {

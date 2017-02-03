@@ -2,7 +2,7 @@
 (function (window) {
   window.__env = window.__env || {};
 
-  var environment = "prod"; //can be dev, test or prod.
+  var environment = "qa"; //can be dev, test or prod.
 
   //environment specific constants
   if(environment === "prod") {

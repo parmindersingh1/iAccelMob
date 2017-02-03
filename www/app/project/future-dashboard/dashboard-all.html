@@ -1,69 +1,30 @@
-<ion-view class="profile-view">
+<ion-view class="feeds-categories-view">
 <ion-nav-title>
   <span>All Sites</span>
 </ion-nav-title>
     <div class="spinner" ng-show="vm.progress">
         <ion-spinner icon="android"></ion-spinner>
     </div>
-  <ion-content ng-show="!vm.progress">
-<div>
-  <div class="row">
-    <div class="col col-50">
-            <h5 class="text-small text-uppercase">
-              <a ui-sref="app.dashboard" class="text-small" style="text-decoration:none">
-                Easy Day Panipat &nbsp<i class="icon ion-arrow-right-b"></i> </a>
-            </h5>
-            <ng-letter-avatar data="{{vm.pnpsite.currentActive}}" height="50" width="50" avatarcustombgcolor="#7F8C8D"
-            box="round" dynamic="true"></ng-letter-avatar>&nbsp<h3 class="inline-block">{{vm.pnpsite.currentActive}}</h3>
-            <div class="block margin-top-10 ">
-             <b>Gurudwara Road, Model Town</b>
+
+    <ion-content>
+
+    <div ng-repeat="row in vm.siteCurrentActive">
+
+        <div class="card item item-icon-right">
+            <div class="padding">
+                <h2 class="title text-bold">
+                    <b> Easy Day </b> </h2>
+                <div class="padding-top">
+                    <h2 class="text-data text-green margin-bottom-5">{{row.name}}</h2>
+                    <a href="#" ui-sref="app.dashboard({id : row.id})" class="text-extra-small">
+                        {{row.address}}
+                        </a>
+                </div>
             </div>
-          </div>
 
-    <div class="col col-50">
-            <h5 class="text-small text-dark-transparent text-uppercase">
-              <a ui-sref="app.dashboard" class="text-small" style="text-decoration:none">
-                Easy Day Delhi &nbsp <i class="icon ion-arrow-right-b"></i>
-              </a>
-            </h5>
-            <ng-letter-avatar data="{{vm.pnpsite.currentActive}}" height="50" width="50" avatarcustombgcolor="#7F8C8D" box="round" dynamic="true" ></ng-letter-avatar>&nbsp<h3 class="inline-block" >{{vm.pnpsite.currentActive}}</h3> <!--<letter-icon data="Omega" color="#7F8C8D" box="round" size="lg" class="margin-right-5"></letter-icon><h3 class="inline-block">Omega</h3>-->
-            <div class="block margin-top-10 ">
-              <b>Sector 7, Dwarka</b>
-            </div>
+        </div>
+
     </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col col-50">
-      <h5 class="text-small text-uppercase">
-        <a ui-sref="app.dashboard" class="text-small" style="text-decoration:none">
-          Easy Day Panipat &nbsp<i class="icon ion-arrow-right-b"></i> </a>
-      </h5>
-      <ng-letter-avatar data="{{vm.pnpsite.currentActive}}" height="50" width="50" avatarcustombgcolor="#7F8C8D"
-                        box="round" dynamic="true"></ng-letter-avatar>&nbsp<h3 class="inline-block">{{vm.pnpsite.currentActive}}</h3>
-      <div class="block margin-top-10 ">
-        <b>Gurudwara Road, Model Town</b>
-      </div>
-    </div>
-
-    <div class="col col-50">
-      <h5 class="text-small text-dark-transparent text-uppercase">
-        <a ui-sref="app.dashboard" class="text-small" style="text-decoration:none">
-          Easy Day Delhi &nbsp <i class="icon ion-arrow-right-b"></i>
-        </a>
-      </h5>
-      <ng-letter-avatar data="{{vm.pnpsite.currentActive}}" height="50" width="50" avatarcustombgcolor="#7F8C8D" box="round" dynamic="true" ></ng-letter-avatar>&nbsp<h3 class="inline-block" >{{vm.pnpsite.currentActive}}</h3> <!--<letter-icon data="Omega" color="#7F8C8D" box="round" size="lg" class="margin-right-5"></letter-icon><h3 class="inline-block">Omega</h3>-->
-      <div class="block margin-top-10 ">
-        <b>Sector 7, Dwarka</b>
-      </div>
-    </div>
-
-  </div>
-
-
-</div>
-
     </ion-content>
  </ion-view>
 

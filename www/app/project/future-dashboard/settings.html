@@ -6,7 +6,7 @@
         <ion-spinner icon="android"></ion-spinner>
       </div>
     <ion-content ng-show="!vm.progress">
-
+        <ion-row responsive-sm>
         <div>
         <ion-toggle ng-repeat="row in vm.control" ng-if="vm.disableTime"
                     {{row.assetName}}
@@ -19,28 +19,24 @@
         </div>
 
         </div>
+            </ion-row>
+        <div ng-if="vm.disableTime">
+            <button type="submit" class="button button-positive button-block" ng-click="vm.saveController(); vm.onCancel()">Save</button>
+            <button  ng-click="vm.onCancel()" class="button button-assertive button-block" > Cancel </button>
+        </div>
         <div class="panel-body ng-scope" ng-if="!vm.disableTime">
-            <div class="setting-box clearfix">
-   <pre class="text-error" style="text:center">
+       <div class="setting-box clearfix">
+   <pre  style= "font-size:20px">
        <b>
        Controller is
        disabled for
        15 minutes !!
-</b>
-
-
-
+       </b>
    </pre>
-            </div>
 
+     </div>
         </div>
-        <br><br>
-        <div>
-            <button type="submit" class="button button-positive button-block" ng-click="vm.saveController(); vm.onCancel()">
-                Save
-            </button>
-            <button  ng-click="vm.onCancel()" class="button button-assertive button-block" > Cancel </button>
-        </div>
+
     </ion-content>
 
 

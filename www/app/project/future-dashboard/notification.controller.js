@@ -14,7 +14,7 @@
     function activate() {
 
     	 dashboardFactory.getAlertData().then(function (response) {
-                if(response.data != null && response.data[0]!=undefined) {
+                if(response.data != null) {
                   vm.data = response.data;
                   //console.log(response.data)
                 }
