@@ -15,7 +15,7 @@
     vm.progress = true;
     vm.siteList = $localStorage._identity.sites;
     vm.siteCurrentActive = [];
-console.log($localStorage._identity.sites);
+//console.log($localStorage._identity.sites);
 
     activate();
 
@@ -24,10 +24,10 @@ console.log($localStorage._identity.sites);
       var promises = [getDashboard(), getDashboardData(), getData(), getDashboardSites()];
       return $q.all(promises).then(function () {
         dashboardFactory.allSiteData().then(function (response) {
-          console.log(response.data);
+          //console.log(response.data);
           vm.progress = false;
           if (response.data != null) {
-            console.log(response.data)
+            //console.log(response.data)
 
             for (var index=0 ; index < vm.siteList.length ; index++){
               for (var key in response.data) {

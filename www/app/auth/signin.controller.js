@@ -34,7 +34,7 @@
         principal.signin(vm.user, vm.password, vm.rememberMe).then(function(){
           logger.info("User logged in successfully");
           //should we change below statement based on role?
-          $state.go('app.dashboard');
+          $state.go('app.dashboardAll');
         }, function(){
           logger.error("Wrong user credentials");
         });
