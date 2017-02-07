@@ -14,6 +14,7 @@
     var vm = this;
 
     vm.user = $localStorage._identity.userDetails;
+    vm.siteList = $localStorage._identity.sites;
 
 
     vm.isAdminRole = role.isAdminRole();

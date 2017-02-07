@@ -8,7 +8,7 @@
   appRun.$inject = ['routerHelper'];
   /* @ngInject */
   function appRun(routerHelper) {
-    var otherwise = 'app/dashboard';
+    var otherwise = 'app/dashboardAll';
     routerHelper.configureStates(getStates(), otherwise);
   }
 

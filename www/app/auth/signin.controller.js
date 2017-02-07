@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('SigninController', SigninController);
 
-  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , 'ConnectivityMonitor' ,'$ionicPopup', '$ionicPlatform'];
+  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , 'ConnectivityMonitor' ,'$ionicPopup', '$ionicPlatform' , '$localStorage'];
   /* @ngInject */
-  function SigninController($scope, logger, $state, principal,  __env , ConnectivityMonitor , $ionicPopup, $ionicPlatform) {
+  function SigninController($scope, logger, $state, principal,  __env , ConnectivityMonitor , $ionicPopup, $ionicPlatform , $localStorage) {
     var vm = this;
     vm.signin = signin;
 
@@ -33,8 +33,14 @@
       if(form.$valid) {
         principal.signin(vm.user, vm.password, vm.rememberMe).then(function(){
           logger.info("User logged in successfully");
-          //should we change below statement based on role?
-          $state.go('app.dashboardAll');
+          if($localStorage._identity.sites.length > 1){
+            //should we change below statement based on role?
+            $state.go('app.dashboardAll');
+          }
+          else {
+            $state.go('app.dashboard',({id : $localStorage._identity.sites[0].id}))
+          }
+
         }, function(){
           logger.error("Wrong user credentials");
         });

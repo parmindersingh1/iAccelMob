@@ -25,16 +25,16 @@
           <p class="message">{{vm.user.designation}}</p>
         </ion-item>
 
-        <ion-item class="item-icon-left" ng-if="vm.currentAccessLevel >= vm.ACCESS_LEVEL.CLIENT_ADMIN  && vm.isAdminRole == true" nav-clear menu-close ui-sref="app.dashboardAll">
+        <ion-item class="item-icon-left" ng-if="vm.siteList.length > 1" nav-clear menu-close ui-sref="app.dashboardAll">
           <i class="icon ion-briefcase"></i>
           <h2 class="menu-text inline-block">All Sites</h2>
         </ion-item>
 
 
-        <!--<ion-item class="item-icon-left" nav-clear menu-close ui-sref="app.dashboard">-->
-          <!--<i class="icon ion-bookmark"></i>-->
-          <!--<h2 class="menu-text">Dashboard</h2>-->
-        <!--</ion-item>-->
+        <ion-item class="item-icon-left"  ng-if="vm.siteList.length < 2" nav-clear menu-close ui-sref="app.dashboard">
+          <i class="icon ion-bookmark"></i>
+          <h2 class="menu-text">Dashboard</h2>
+        </ion-item>
 
 
         <ion-item class="item-icon-left" ng-if="vm.currentAccessLevel >= vm.ACCESS_LEVEL.SITE_ADMIN  && vm.isAdminRole == true" nav-clear menu-close ui-sref="app.command">
