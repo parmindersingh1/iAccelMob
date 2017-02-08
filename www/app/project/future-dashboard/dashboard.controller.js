@@ -14,7 +14,7 @@
     vm.siteLocation = '';
     vm.progress = true;
     dashboardFactory.get($stateParams.id).then(function (response) {
-      vm.title = response.data.name;
+      vm.title = response.data.address;
     });
 
     dashboardFactory.get($stateParams.id).then(function (response) {
@@ -91,15 +91,16 @@
 
 
 angular
-  .module('app.dashboard').controller('ConsumptionCtrl', ["$scope" , "dashboardFactory" ,
-  function($scope , dashboardFactory) {
+  .module('app.dashboard').controller('ConsumptionCtrl', ["$scope" , "dashboardFactory",'$stateParams' ,
+  function($scope , dashboardFactory,$stateParams) {
 
     var mains = this;
+    mains.siteId = $stateParams.id;
     mains.temp = {};
     mains.temp2 = {};
 
     mains.activate = function (){
-      dashboardFactory.getMainsData().then(function (response) {
+      dashboardFactory.getMainsData(mains.siteId).then(function (response) {
 
         if(response.data != null) {
 
@@ -121,7 +122,7 @@ angular
     mains.activate();
 
     mains.activateGenset = function (){
-      dashboardFactory.getGensetData().then(function (response) {
+      dashboardFactory.getGensetData(mains.siteId).then(function (response) {
 
         if(response.data != null) {
 
@@ -146,10 +147,11 @@ angular
   }]);
 
   angular
-    .module('app.dashboard').controller('ActiveHourCtrl', ["$scope", "dashboardFactory" ,"$interval","DASHBOARD_REFRESH_RATE",
-    function($scope , dashboardFactory,$interval, DASHBOARD_REFRESH_RATE) {
+    .module('app.dashboard').controller('ActiveHourCtrl', ["$scope", "dashboardFactory" ,"$interval","DASHBOARD_REFRESH_RATE",'$stateParams',
+    function($scope , dashboardFactory,$interval, DASHBOARD_REFRESH_RATE,$stateParams) {
 
       var vm = this;
+      vm.siteId = $stateParams.id;
 
       vm.activate = function (){
         dashboardFactory.getActiveHourData().then(function (response) {
@@ -178,14 +180,15 @@ angular
 
 
     angular
-      .module('app.dashboard').controller('TemperatureCtrl', ["$scope", "dashboardFactory" ,"$interval","DASHBOARD_REFRESH_RATE",
-      function($scope , dashboardFactory,$interval, DASHBOARD_REFRESH_RATE ) {
+      .module('app.dashboard').controller('TemperatureCtrl', ["$scope", "dashboardFactory" ,"$interval","DASHBOARD_REFRESH_RATE",'$stateParams',
+      function($scope , dashboardFactory,$interval, DASHBOARD_REFRESH_RATE, $stateParams ) {
 
         var vm = this;
+        vm.siteId = $stateParams.id;
         vm.temp = {};
 
         vm.activate = function (){
-          dashboardFactory.getTemperatureData().then(function (response) {
+          dashboardFactory.getTemperatureData(vm.siteId).then(function (response) {
 
             if(response.data != null) {
 
@@ -217,13 +220,13 @@ angular
       }]);
 
       angular
-        .module('app.dashboard').controller('MainSupplyCtrl', ["$scope", "dashboardFactory" ,
-        function($scope , dashboardFactory ) {
+        .module('app.dashboard').controller('MainSupplyCtrl', ["$scope", "dashboardFactory",'$stateParams',
+        function($scope , dashboardFactory, $stateParams ) {
 
           var vm = this;
-
+          vm.siteId = $stateParams.id;
           vm.activate = function (){
-            dashboardFactory.getSupplyData().then(function (response) {
+            dashboardFactory.getSupplyData(vm.siteId).then(function (response) {
               if(response.data != null) {
                 vm.data = response.data;
               }
@@ -238,13 +241,14 @@ angular
         }]);
 
         angular
-          .module('app.dashboard').controller('AssetStatusCtrl', ["$scope", "dashboardFactory","logger" ,"$interval","DASHBOARD_REFRESH_RATE",
-          function($scope , dashboardFactory, logger,$interval, DASHBOARD_REFRESH_RATE) {
+          .module('app.dashboard').controller('AssetStatusCtrl', ["$scope", "dashboardFactory","logger" ,"$interval","DASHBOARD_REFRESH_RATE",'$stateParams',
+          function($scope , dashboardFactory, logger,$interval, DASHBOARD_REFRESH_RATE,$stateParams) {
 
             var vm = this;
-
+            vm.siteId = $stateParams.id;
+            console.log(vm.siteId);
             vm.activate = function (){
-              dashboardFactory.getAssetData().then(function (response) {
+              dashboardFactory.getAssetData(vm.siteId).then(function (response) {
                 if (response.data != null) {
                   vm.master = angular.copy(response.data);
                   for (var index=0 ; index < vm.master.length; index++){
@@ -276,13 +280,13 @@ angular
 
 
           angular
-          .module('app.dashboard').controller('AlertsDashboardCtrl', ["$scope", "dashboardFactory","logger" ,"$interval","DASHBOARD_REFRESH_RATE",
-          function($scope , dashboardFactory, logger, $interval, DASHBOARD_REFRESH_RATE) {
+          .module('app.dashboard').controller('AlertsDashboardCtrl', ["$scope", "dashboardFactory","logger" ,"$interval","DASHBOARD_REFRESH_RATE",'$stateParams',
+          function($scope , dashboardFactory, logger, $interval, DASHBOARD_REFRESH_RATE,$stateParams) {
 
             var vm = this;
-
+            vm.siteId = $stateParams.id;
             vm.activate = function (){
-              dashboardFactory.getAlertData().then(function (response) {
+              dashboardFactory.getAlertData(vm.siteId).then(function (response) {
                 if(response.data != null) {
                   vm.data = response.data;
                   //console.log(response.data)

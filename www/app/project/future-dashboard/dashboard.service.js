@@ -20,8 +20,8 @@
                   });
           return promise;
       };
-      service.getMainsData = function () { // TODO below need to be changed
-          var promise = $http.get(__env.dataServerUrl + '/dashboard/mainConsumption?siteId=58005c16e855161f7d388cf0')
+      service.getMainsData = function (siteId) { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/mainConsumption?siteId=' + siteId)
               .then(
 
                   function (response) {
@@ -33,8 +33,8 @@
           return promise;
       };
 
-      service.getGensetData = function () { // TODO below need to be changed
-          var promise = $http.get(__env.dataServerUrl +'/dashboard/dgConsumption?siteId=58005c16e855161f7d388cf0')
+      service.getGensetData = function (siteId) { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl +'/dashboard/dgConsumption?siteId=' + siteId)
               .then(
 
                   function (response) {
@@ -46,8 +46,8 @@
           return promise;
       };
 
-      service.getActiveHourData = function () { // TODO below need to be changed
-          var promise = $http.get(__env.dataServerUrl + '/dashboard/currentActive?siteId=58005c16e855161f7d388cf0')
+      service.getActiveHourData = function (siteId) { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/currentActive?siteId=' + siteId)
               .then(
 
                   function (response) {
@@ -59,8 +59,8 @@
           return promise;
       };
 
-      service.getEnergyData = function () { // TODO below need to be changed
-          var promise = $http.get(__env.dataServerUrl + '/dashboard/dgMainHistogram?siteId=58005c16e855161f7d388cf0')
+      service.getEnergyData = function (siteId) { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/dgMainHistogram?siteId=' + siteId)
               .then(
 
                   function (response) {
@@ -72,8 +72,8 @@
           return promise;
       };
 
-      service.getTemperatureData = function () { // TODO below need to be changed
-          var promise = $http.get(__env.dataServerUrl + '/dashboard/temperature?siteId=58005c16e855161f7d388cf0')
+      service.getTemperatureData = function (siteId) { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/temperature?siteId=' + siteId)
               .then(
 
                   function (response) {
@@ -86,8 +86,8 @@
       };
 
 
-      service.getSupplyData = function () { // TODO below need to be changed
-          var promise = $http.get(__env.dataServerUrl + '/dashboard/parameters?siteId=58005c16e855161f7d388cf0')
+      service.getSupplyData = function (siteId) { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/parameters?siteId=' + siteId)
               .then(
 
                   function (response) {
@@ -99,10 +99,9 @@
           return promise;
       };
 
-      service.getAssetData = function () { // TODO below need to be changed
-          var promise = $http.get(__env.dataServerUrl + '/dashboard/acStatus?siteId=58005c16e855161f7d388cf0')
+      service.getAssetData = function (siteId) { // TODO below need to be changed
+          var promise = $http.get(__env.dataServerUrl + '/dashboard/acStatus?siteId=' + siteId)
               .then(
-
                   function (response) {
                       return response;
                   },
@@ -111,8 +110,8 @@
                   });
           return promise;
       };
-  service.getAlertData = function () { // TODO below need to be changed
-     var promise = $http.get(__env.notificationServerUrl + '/alarms/dashboardData?siteId=58005c16e855161f7d388cf0')
+  service.getAlertData = function (siteId) { // TODO below need to be changed
+     var promise = $http.get(__env.notificationServerUrl + '/alarms/dashboardData?siteId=' + siteId)
       .then(
 
         function (response) {
@@ -186,8 +185,8 @@
       return promise;
     };
 
-    service.getAssetInfo = function(id) {
-      var promise = $http.get(__env.dataServerUrl + '/assetStatus/digitalOutput?siteId=58005c16e855161f7d388cf0')
+    service.getAssetInfo = function(siteId) {
+      var promise = $http.get(__env.dataServerUrl + '/assetStatus/digitalOutput?siteId=' + siteId)
         .then(
           function (response) {
             return response;
@@ -199,7 +198,7 @@
     };
 
       service.sendAssetInfo = function (data) {
-          var promise = $http.post(__env.dataServerUrl + '/assetStatus/saveAssetStatus/58005c16e855161f7d388cf0' , data)
+          var promise = $http.post(__env.dataServerUrl + '/assetStatus/saveAssetStatus/' + siteId , data)
               .then(
                   function (response) {
                       return response;

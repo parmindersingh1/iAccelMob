@@ -24,7 +24,7 @@
       var promises = [getDashboard(), getDashboardData(), getData(), getDashboardSites()];
       return $q.all(promises).then(function () {
         dashboardFactory.allSiteData().then(function (response) {
-          //console.log(response.data);
+          console.log(response.data);
           vm.progress = false;
           if (response.data != null) {
             //console.log(response.data)
