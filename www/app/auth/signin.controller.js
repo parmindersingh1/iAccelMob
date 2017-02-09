@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('SigninController', SigninController);
 
-  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , 'ConnectivityMonitor' ,'$ionicPopup', '$ionicPlatform' , '$localStorage'];
+  SigninController.$inject = ['$scope', 'logger', '$state', 'principal', '__env' , 'ConnectivityMonitor' ,'$ionicPopup', '$ionicPlatform' , '$localStorage', '$ionicHistory'];
   /* @ngInject */
-  function SigninController($scope, logger, $state, principal,  __env , ConnectivityMonitor , $ionicPopup, $ionicPlatform , $localStorage) {
+  function SigninController($scope, logger, $state, principal,  __env , ConnectivityMonitor , $ionicPopup, $ionicPlatform , $localStorage, $ionicHistory) {
     var vm = this;
     vm.signin = signin;
 
@@ -40,6 +40,11 @@
           else {
             $state.go('app.dashboard',({id : $localStorage._identity.sites[0].id}))
           }
+          $ionicHistory.clearHistory();
+          $ionicHistory.clearCache();
+          $ionicHistory.nextViewOptions({
+              disableBack: true
+          });
 
         }, function(){
           logger.error("Wrong user credentials");
