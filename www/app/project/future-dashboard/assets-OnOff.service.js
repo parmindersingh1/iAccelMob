@@ -10,8 +10,8 @@
   function assetControllerfactory($http, __env) {
     var service = {};
 
-    service.getAssetInfo = function () {
-      var promise = $http.get(__env.dataServerUrl + '/assetStatus/digitalOutput?siteId=58005c16e855161f7d388cf0')
+    service.getAssetInfo = function (siteId) {
+      var promise = $http.get(__env.dataServerUrl + '/assetStatus/digitalOutput?siteId=' + siteId)
         .then(
           function (response) {
             return response;
@@ -22,8 +22,8 @@
       return promise;
     };
 
-    service.sendAssetInfo = function (data) {
-      var promise = $http.post(__env.dataServerUrl + '/assetStatus/saveAssetStatus/58005c16e855161f7d388cf0' , data)
+    service.sendAssetInfo = function (data,siteId) {
+      var promise = $http.post(__env.dataServerUrl + '/assetStatus/saveAssetStatus/' + siteId , data)
         .then(
           function (response) {
             return response;

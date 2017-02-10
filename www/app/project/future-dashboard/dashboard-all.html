@@ -28,7 +28,7 @@
 
         <!--</div>-->
         <a href="#" ui-sref="app.dashboard({id : row.id})" class="text-extra-small" style="text-decoration:none">
-        <div class="card item item-icon-right" style="height: 150px;">
+        <div class="card item item-icon-right" style="height: 160px;">
             <div class="row no-border" style="">
                 <div class="col col-33">
                     <h2 class="title text-bold">
@@ -39,17 +39,24 @@
                                       box="round" dynamic="true" ></ng-letter-avatar>&nbsp&nbsp<b>{{row.currentActive}}</b>
                 </div>
             </div>
-            <div class="">
+
                 <div class="">
                     <p class="text-data text-green margin-bottom-5">{{row.name}}</p>
-                    {{row.address}}
-
+                    <ion-item no-lines class="item-text-wrap">
+                        {{row.address}}
+                    </ion-item>
+                </div>
 
                 </div>
-                </div>
-            </div>
-            </a>
+        </a>
         </div>
         </ion-content>
      </ion-view>
 
+<!--<p class="text-data text-green margin-bottom-5">{{row.name}}</p>-->
+<!--&lt;!&ndash;<ion-item class="item-text-wrap">&ndash;&gt;-->
+<!--&lt;!&ndash;{{row.name}}&ndash;&gt;-->
+<!--&lt;!&ndash;</ion-item>&ndash;&gt;-->
+<!--<ion-item class="item-text-wrap">-->
+    <!--{{row.address}}-->
+<!--</ion-item>-->

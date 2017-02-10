@@ -125,7 +125,7 @@ angular.module('app', [
           $ionicHistory.nextViewOptions({
               disableBack: true
           });
-          $state.go('app.dashboard');
+          $state.go('app.dashboardAll');
         }
       
      }

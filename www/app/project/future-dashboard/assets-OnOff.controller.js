@@ -5,20 +5,42 @@
     .module('app.dashboard')
     .controller('ControlAsset', ControlAsset);
 
-  ControlAsset.$inject = ['$scope','assetControllerfactory', '$state', 'logger', '$http', 'validationHelperFactory', '$localStorage', '__env', '$ionicHistory','$interval', 'DASHBOARD_REFRESH_RATE'];
+  ControlAsset.$inject = ['$scope','assetControllerfactory','dashboardFactory', '$state', 'logger', '$http', 'validationHelperFactory', '$localStorage', '__env', '$ionicHistory','$interval', 'DASHBOARD_REFRESH_RATE','$stateParams'];
   /* @ngInject */
-  function ControlAsset($scope, assetControllerfactory, $state, logger, $http, validationHelperFactory, $localStorage, __env, $ionicHistory, $interval, DASHBOARD_REFRESH_RATE) {
+  function ControlAsset($scope, assetControllerfactory, dashboardFactory, $state, logger, $http, validationHelperFactory, $localStorage, __env, $ionicHistory, $interval, DASHBOARD_REFRESH_RATE,$stateParams) {
     var vm = this;
     vm.temp = {};
     vm.title = "command";
+    vm.siteList = $localStorage._identity.sites;
+    vm.siteId = $stateParams.id;
+    vm.siteCurrentActive = [];
     vm.progress = true;
     activate();
 
     function activate() {
        vm.disableTime = true;
 
-      assetControllerfactory.getAssetInfo().then(function (response) {
+      dashboardFactory.allSiteData().then(function (response) {
+        //console.log(response.data);
         vm.progress = false;
+        if (response.data != null) {
+          //console.log(response.data)
+
+          for (var index=0 ; index < vm.siteList.length ; index++){
+            for (var key in response.data) {
+              if (vm.siteList[index].id == key) {
+                vm.siteCurrentActive.push(angular.extend(response.data[key],vm.siteList[index]));
+                break;
+              }
+            }
+
+          }
+        }
+      });
+
+      assetControllerfactory.getAssetInfo(vm.siteId).then(function (response) {
+        vm.progress = false;
+        console.log(response.data);
         if (response.status == 200) {
           if (response.data != null) {
             vm.master = angular.copy(response.data);
@@ -65,7 +87,7 @@
         vm.temp[vm.control[index].assetName] = vm.control[index];
       }
       console.log(vm.temp);
-      assetControllerfactory.sendAssetInfo(vm.temp).then(function (response) {
+      assetControllerfactory.sendAssetInfo(vm.temp,vm.siteId).then(function (response) {
         if (response.status == 200) {
           console.log(response.data);
           $state.go("app.dashboard");
@@ -91,7 +113,7 @@
       $ionicHistory.nextViewOptions({
         disableBack: true
       });
-      $state.go("app.dashboard");
+      $state.go("app.settingsListAll");
     }
 
   }

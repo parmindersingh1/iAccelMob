@@ -55,7 +55,7 @@
       {
         state: 'app.command',
         config: {
-          url: '/command',
+          url: '/:id/command',
           views: {
             'menuContent': {
                 templateUrl: 'app/project/future-dashboard/settings.html',
@@ -103,7 +103,25 @@
               }
             }
         }
-      }
+      },
+        {
+            state: 'app.settingsListAll',
+            config: {
+                url: '/settingsListAll',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'app/project/future-dashboard/settingsListAll.html',
+                        data: {
+                            roles: ['User']
+                        },
+                        controller: 'ControlAsset',
+                        controllerAs: 'vm',
+                        bindToController : true,
+                        title: 'Client Dashboard'
+                    }
+                }
+            }
+        }
 
     ];
   }
