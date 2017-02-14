@@ -15,7 +15,7 @@
     vm.progress = true;
     vm.siteList = $localStorage._identity.sites;
     vm.siteCurrentActive = [];
-//console.log($localStorage._identity.sites);
+console.log($localStorage._identity.sites);
 
     activate();
 

@@ -14,7 +14,7 @@
     vm.siteLocation = '';
     vm.progress = true;
     dashboardFactory.get($stateParams.id).then(function (response) {
-      vm.title = response.data.address;
+      vm.title = response.data.name;
     });
 
     dashboardFactory.get($stateParams.id).then(function (response) {
@@ -154,7 +154,8 @@ angular
       vm.siteId = $stateParams.id;
 
       vm.activate = function (){
-        dashboardFactory.getActiveHourData().then(function (response) {
+        dashboardFactory.getActiveHourData(vm.siteId).then(function (response) {
+          //console.log(response.data);
           vm.progress = false;
           if(response.data != null) {
             vm.data = response.data;

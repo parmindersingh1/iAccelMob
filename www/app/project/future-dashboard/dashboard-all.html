@@ -34,10 +34,13 @@
                     <h2 class="title text-bold">
                         <b> Easy Day </b> </h2>
                     </div>
-                <div class="col col-offset-50">
+                <div class="col col-33">
                     <ng-letter-avatar data="{{row.currentActive}}" height="50" width="50" avatarcustombgcolor="#7F8C8D"
-                                      box="round" dynamic="true" ></ng-letter-avatar>&nbsp&nbsp<b>{{row.currentActive}}</b>
+                                      box="round" dynamic="true" ></ng-letter-avatar>
                 </div>
+                <div class="col col-33" style="font-size:25px" ng-if="row.unitsConsumption!=null">
+                   <b>{{row.currentActive}} {{row.unitsConsumption}}kWh</b>
+                    </div>
             </div>
 
                 <div class="">
