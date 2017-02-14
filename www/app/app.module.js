@@ -117,7 +117,7 @@ angular.module('app', [
      } else {
       // This is the last page: Show confirmation popup
       console.log('path is '+$location.path());
-        if ($location.path() === "/app/dashboard" || $location.path() === "app/dashboard" || _.includes($location.path(), 'auth')) {
+        if ($location.path() === "/app/dashboardAll" || $location.path() === "app/dashboardAll" || _.includes($location.path(), 'auth')) {
            showConfirm();
         } else {
           $ionicHistory.clearHistory();
