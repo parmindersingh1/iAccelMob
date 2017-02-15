@@ -1,0 +1,45 @@
+fixed-panel {
+    min-height: 430px;
+    max-height: 430px;
+    overflow-y: auto;
+}
+
+.fixed-ComparisonPanel {
+    min-height: 380px;
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+.wave-spinner>div {
+    background-color: #7f7fff;
+}
+
+.sweet-alert button.cancel {
+    background-color: #ff0000; }
+.sweet-alert button.cancel:hover {
+    background-color: #ff0000; }
+.sweet-alert button.cancel:active {
+    background-color: #ff0000; }
+
+@media screen and (max-width:767px) {
+    .table-responsive {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow: scroll !important;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd;
+    }
+}
+.navNextScroll {
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    /*//white-space: -pre-wrap;      !* Opera 4-6 *!*/
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    white-space: pre-wrap;       /* css-3 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    white-space: normal;
+}
+.breakWord {
+    width: 30em;
+    overflow-wrap: break-word;
+}
