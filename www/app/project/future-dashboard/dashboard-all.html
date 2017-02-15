@@ -33,20 +33,20 @@
                 <div class="col col-30">
                     <h2 class="title text-bold navNextScroll">
                         <b> Easy Day </b> </h2>
-                    </div>
+                </div>
                 <div class="col col-30">
                     <ng-letter-avatar data="{{row.currentActive}}" height="40" width="40" avatarcustombgcolor="#7F8C8D"
                                       box="round" dynamic="true" ></ng-letter-avatar>
                 </div>
                 <div class="col col-33" style="font-size:25px" ng-if="row.unitsConsumption!=null">
                    <b>{{row.currentActive}} {{row.unitsConsumption}}kWh</b>
-                    </div>
+                </div>
             </div>
 
-                <div class="breakWord">
-                    <p class="text-data text-green margin-bottom-5 breakWord">{{row.name}} </p>
-                    <br> {{row.address}}
-                </div>
+            <div class="breakWord padding-10">
+                <h2 class="text-data text-green margin-bottom-5 breakWord">{{row.name}} </h2>
+                <span class="post-title"> {{row.address}}</span>
+            </div>
 
                 </div>
         </a>
