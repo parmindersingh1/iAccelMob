@@ -161,7 +161,7 @@
         $ionicHistory.nextViewOptions({
             disableBack: true
         });
-        $state.go("app.dashboard");
+        $state.go("app.userProfile");
       }
 
   }
