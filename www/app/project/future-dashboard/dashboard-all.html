@@ -9,43 +9,20 @@
     <ion-content>
 
     <div ng-repeat="row in vm.siteCurrentActive">
-
-        <!--<div class="card item item-icon-right" style="height: 150px;">-->
-            <!--<div class="padding">-->
-                <!--<h2 class="title text-bold">-->
-                    <!--<b> Easy Day </b> </h2>-->
-                <!--<div class="padding-top">-->
-                    <!--<h2 class="text-data text-green margin-bottom-5">{{row.name}}</h2>-->
-                    <!--<a href="#" ui-sref="app.dashboard({id : row.id})" class="text-extra-small">-->
-                        <!--{{row.address}}-->
-                        <!--</a>-->
-                <!--</div>-->
-                <!--<div class="right-align">-->
-                    <!--<ng-letter-avatar data="{{row.currentActive}}" height="50" width="75" avatarcustombgcolor="#7F8C8D"-->
-                     <!--box="round" dynamic="true" ></ng-letter-avatar>&nbsp<h3 class="inline-block" >{{row.currentActive}}</h3>-->
-                <!--</div>-->
-            <!--</div>-->
-
-        <!--</div>-->
         <a href="#" ui-sref="app.dashboard({id : row.id})" class="text-extra-small" style="text-decoration:none">
-        <div class="card item item-icon-right" style="height: 170px;">
-            <div class="row no-border" style="">
-                <div class="col col-30">
-                    <h2 class="title text-bold navNextScroll">
-                        <b> Easy Day </b> </h2>
+        <div class="card item item-icon-right" style="height: 176px;">
+            <div class="row no-border">
+                <div>
+                        <b> Easy Day </b>
                 </div>
-                <div class="col col-30">
-                    <ng-letter-avatar data="{{row.currentActive}}" height="40" width="40" avatarcustombgcolor="#7F8C8D"
-                                      box="round" dynamic="true" ></ng-letter-avatar>
-                </div>
-                <div class="col col-33" style="font-size:25px" ng-if="row.unitsConsumption!=null">
-                   <b>{{row.currentActive}} {{row.unitsConsumption}}kWh</b>
+                <div style="font-size:25px" ng-if="row.unitsConsumption!=null">
+                   <b>{{row.currentActive}} {{row.unitsConsumption}}&nbspkWh</b>
                 </div>
             </div>
 
-            <div class="breakWord padding-10">
-                <h2 class="text-data text-green margin-bottom-5 breakWord">{{row.name}} </h2>
-                <span class="post-title"> {{row.address}}</span>
+            <div>
+                <ion-item class="item-text-wrap no-border" style="color:Green;font-size:25px">{{row.name}}</ion-item>
+                <ion-item class="item-text-wrap no-border"> {{row.address}}</ion-item>
             </div>
 
                 </div>
@@ -53,11 +30,3 @@
         </div>
         </ion-content>
      </ion-view>
-
-<!--<p class="text-data text-green margin-bottom-5">{{row.name}}</p>-->
-<!--&lt;!&ndash;<ion-item class="item-text-wrap">&ndash;&gt;-->
-<!--&lt;!&ndash;{{row.name}}&ndash;&gt;-->
-<!--&lt;!&ndash;</ion-item>&ndash;&gt;-->
-<!--<ion-item class="item-text-wrap">-->
-    <!--{{row.address}}-->
-<!--</ion-item>-->

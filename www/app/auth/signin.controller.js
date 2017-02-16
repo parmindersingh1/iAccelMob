@@ -33,6 +33,7 @@
       if(form.$valid) {
         principal.signin(vm.user, vm.password, vm.rememberMe).then(function(){
           logger.info("User logged in successfully");
+          console.log($localStorage._identity);
           if($localStorage._identity.sites.length > 1){
             //should we change below statement based on role?
             $state.go('app.dashboardAll');
